@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Blocks every outside script, font, tracker and form. Keeps the page private by design. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <title>Site-Based Big Checklist | Big Brothers Big Sisters of the Greater Sacramento Area</title>
+  <meta name="description" content="Your step-by-step checklist for becoming a site-based mentor with Big Brothers Big Sisters of the Greater Sacramento Area.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230a6b45'/%3E%3Cpath d='M10 16.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <!-- steps.js holds all the words. app.js builds the page from it. -->
+  <script src="steps.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#checklist" data-ui="skipLink">Skip to the checklist</a>
+
+  <header class="site-header">
+    <div class="wrap header-top">
+      <p class="org-name" data-ui="orgName">Big Brothers Big Sisters of the Greater Sacramento Area</p>
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+        <button type="button" data-lang="es" lang="es" aria-pressed="false">Español</button>
+      </div>
+    </div>
+    <div class="wrap header-main">
+      <h1 data-ui="pageTitle">Become a site-based Big</h1>
+      <p class="tagline" data-ui="tagline"></p>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="intro">
+        <p data-ui="introText"></p>
+        <p class="privacy-note" data-ui="privacyNote"></p>
+      </div>
+
+      <div class="progress-panel">
+        <p class="progress-text" id="progress-text" role="status"></p>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+        <p class="storage-warning" id="storage-warning" data-ui="storageWarning" hidden></p>
+        <button type="button" class="button-secondary" id="reset-button" data-ui="resetButton">Reset my progress</button>
+      </div>
+
+      <div id="checklist" class="checklist" tabindex="-1">
+        <noscript>
+          <p class="noscript">This checklist needs JavaScript turned on. / Esta lista necesita que JavaScript esté activado.</p>
+        </noscript>
+      </div>
+
+      <section class="faq" id="faq" aria-labelledby="faq-heading" hidden>
+        <h2 id="faq-heading" data-ui="faqHeading">Common questions</h2>
+        <div id="faq-list"></div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" data-ui="contactHeading">Questions? Contact us</h2>
+        <p data-ui="contactIntro"></p>
+        <div id="contact-details"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p data-ui="footer"></p>
+    </div>
+  </footer>
+</body>
+</html>
