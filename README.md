@@ -28,7 +28,7 @@ Everything people read on the page is in **`steps.js`**. You can edit it right o
 2. Click the pencil icon (Edit this file).
 3. Change only the text between the "quote marks".
 4. Click **Commit changes**, add a short note about what you changed, and commit to `main`.
-5. Wait about a minute, then reload the live site to check.
+5. Wait a few minutes, then reload the live site to check. Browsers can keep the old version for up to 10 minutes.
 
 ### Adding a link
 
@@ -104,7 +104,7 @@ All colors are in the first block of `styles.css`. They were picked from the Lun
 |---|---|---|
 | `steps.js` | All words, links and contact info, in English and Spanish | Yes |
 | `styles.css` | Colors and layout | Colors only, usually |
-| `index.html` | Page structure | Rarely |
+| `index.html` | Page structure. After changing `app.js` or `styles.css`, raise the `?v=` number on their links here so visitors get the new files | Rarely |
 | `app.js` | Builds the page, saves checkmarks | No |
 | `assets/` | Logo and the flyer's line pattern | Replace files only |
 | `.nojekyll` | Tells GitHub Pages to serve files as they are | No |
