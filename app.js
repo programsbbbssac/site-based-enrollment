@@ -199,7 +199,7 @@
 
     var body = make("div", "step-body");
 
-    var heading = make("h3", "step-title");
+    var heading = make("h4", "step-title");
     var label = make("label");
     label.htmlFor = inputId;
     label.appendChild(make("span", "step-number", ui("stepLabel", { number: number })));
@@ -274,7 +274,7 @@
       marker.appendChild(make("span", "stage-marker-number", String(index + 1)));
       section.appendChild(marker);
 
-      var heading = make("h2", "stage-heading");
+      var heading = make("h3", "stage-heading");
       heading.id = headingId;
       heading.appendChild(make("span", "stage-label", ui("stageLabel", { number: index + 1 })));
       heading.appendChild(document.createTextNode(" "));
@@ -305,6 +305,52 @@
         console.warn("steps.js: step \"" + step.id + "\" is hidden because its stage \"" + step.stage + "\" doesn't match any stage id.");
       }
     });
+  }
+
+  // Simple line icons for the program highlights. Names used in steps.js.
+  var ICONS = {
+    people: ["M5 8a3 3 0 1 0 6 0a3 3 0 1 0 -6 0", "M14 9a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0", "M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6", "M14.5 14.2c.6-.3 1.3-.5 2-.5 2.8 0 5 2.4 5 5.3"],
+    calendar: ["M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z", "M3 10h18", "M8 3v4", "M16 3v4", "M8 14h3v3H8z"],
+    chat: ["M4 4h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3.5V14H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z", "M18 9h2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3.5-3H12a2 2 0 0 1-1.7-1"],
+    school: ["M3 21h18", "M5 21V10l7-5 7 5v11", "M12 18s-3.2-1.9-3.2-4a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 2.1-3.2 4-3.2 4z"]
+  };
+
+  function lineIcon(name) {
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("width", "32");
+    svg.setAttribute("height", "32");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    svg.setAttribute("class", "highlight-icon");
+    (ICONS[name] || ICONS.people).forEach(function (d) {
+      var path = document.createElementNS(ns, "path");
+      path.setAttribute("d", d);
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke", "currentColor");
+      path.setAttribute("stroke-width", "1.8");
+      path.setAttribute("stroke-linecap", "round");
+      path.setAttribute("stroke-linejoin", "round");
+      svg.appendChild(path);
+    });
+    return svg;
+  }
+
+  function buildHighlights() {
+    var list = document.getElementById("highlights");
+    if (!list) return;
+    list.textContent = "";
+    var items = Array.isArray(content.highlights) ? content.highlights : [];
+    items.forEach(function (item) {
+      var text = item[language] || item.en;
+      if (!text) return;
+      var li = make("li", "highlight");
+      li.appendChild(lineIcon(item.icon));
+      li.appendChild(make("p", null, text));
+      list.appendChild(li);
+    });
+    list.hidden = list.children.length === 0;
   }
 
   function buildFaq() {
@@ -377,6 +423,7 @@
       button.setAttribute("aria-pressed", String(button.getAttribute("data-lang") === language));
     });
 
+    buildHighlights();
     buildChecklist();
     buildFaq();
     buildContact();

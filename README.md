@@ -1,8 +1,8 @@
-# Site-Based Big Checklist
+# Lunch Buddies Mentor Checklist
 
-A step-by-step checklist for people becoming site-based mentors ("Bigs") with Big Brothers Big Sisters of the Greater Sacramento Area. It works in English and Spanish and is built for phones. The steps follow the applicant email BBBS sends and the Site-Based Big Process flyer.
+A step-by-step checklist for people becoming Lunch Buddies mentors ("Bigs") with Big Brothers Big Sisters of the Greater Sacramento Area. Lunch Buddies is BBBS’s site-based mentoring program for elementary students. It works in English and Spanish and is built for phones. The steps follow the applicant email BBBS sends and the Site-Based Big Process flyer. The look (colors, logo, line pattern, the four program highlights) comes from the Lunch Buddies flyer.
 
-This site is only for **site-based** enrollment (for example, Lunch Buddies). Community-based enrollment uses a separate tool and is not part of this project.
+This site is only for **site-based** enrollment through Lunch Buddies. Community-based enrollment uses a separate tool and is not part of this project.
 
 ## What this site does and doesn't do
 
@@ -43,6 +43,10 @@ link: "https://bbbs.tfaforms.net/1234567",
 - If a Spanish version of the form exists, put it in `linkEs`. Spanish readers will get that one instead.
 - `englishOnly: true` tells Spanish readers the form is only in English. Change it to `false` once a Spanish version exists.
 
+### Editing the program description and the four highlight tiles
+
+The "What is Lunch Buddies?" text is `aboutText` in the `ui` section of `steps.js`. The four tiles under it are the `highlights` list. Each tile has an `icon` (`people`, `calendar`, `chat` or `school`) and English and Spanish text.
+
 ### Editing common questions
 
 The `faq` list at the bottom of `steps.js` holds the questions and answers shown above the contact section. Copy a block to add one. Delete every block to hide the section.
@@ -68,9 +72,14 @@ Open the file's **History**, compare with the last version that worked, and fix 
 
 The Spanish text in `steps.js` is a first draft. A bilingual staff member must review **all** of it before launch, with special care for anything marked `SPANISH REVIEW: legal` (background checks, Live Scan, the sex offender registry check, mandated reporting, TB testing, the Code of Conduct, consent). When done, update the note at the top of `steps.js` with who reviewed it and when.
 
-## Changing colors
+## Changing colors, logo and fonts
 
-All colors are in the first block of `styles.css`. Text colors must keep at least a 4.5:1 contrast ratio with their background. Check at <https://webaim.org/resources/contrastchecker/>.
+All colors are in the first block of `styles.css`. They were picked from the Lunch Buddies flyer (green `#0a714e`, mint `#00fb87`, black).
+
+- The logo is `assets/bbbs-logo.png`, taken from the flyer. To use a sharper official file, replace it with a PNG of the same name (white logo on a transparent background, at least 700 pixels wide).
+- `assets/pattern.svg` is the flyer's line pattern and `assets/hero-lines.svg` is the faint version in the header.
+- The headline font uses condensed fonts already on people's devices (Avenir Next Condensed on iPhone, Roboto Condensed on Android), so nothing loads from outside. If BBBS has official brand font files, add them to the repo and list them first in `--font-display`.
+- Don't add photos of students without signed photo releases. This site is public. Text colors must keep at least a 4.5:1 contrast ratio with their background. Check at <https://webaim.org/resources/contrastchecker/>.
 
 ## Turning on the website (GitHub Pages)
 
@@ -97,4 +106,5 @@ All colors are in the first block of `styles.css`. Text colors must keep at leas
 | `styles.css` | Colors and layout | Colors only, usually |
 | `index.html` | Page structure | Rarely |
 | `app.js` | Builds the page, saves checkmarks | No |
+| `assets/` | Logo and the flyer's line pattern | Replace files only |
 | `.nojekyll` | Tells GitHub Pages to serve files as they are | No |

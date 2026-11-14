@@ -1,5 +1,5 @@
 /* =====================================================================
-   SITE-BASED BIG CHECKLIST: ALL THE WORDS ON THE PAGE LIVE HERE
+   LUNCH BUDDIES MENTOR CHECKLIST: ALL THE WORDS ON THE PAGE LIVE HERE
    =====================================================================
 
    ⚠ SPANISH REVIEW REQUIRED BEFORE LAUNCH ⚠
@@ -46,13 +46,19 @@ window.SITE_CONTENT = {
      -------------------------------------------------------------- */
   ui: {
     en: {
-      pageTitle: "Become a site-based Big",
-      browserTitle: "Site-Based Big Checklist | Big Brothers Big Sisters of the Greater Sacramento Area",
-      metaDescription: "Your step-by-step checklist for becoming a site-based mentor with Big Brothers Big Sisters of the Greater Sacramento Area.",
+      eyebrow: "Become a mentor",
+      pageTitle: "Lunch Buddies",
+      programTagline: "Relationship-Centered Mentoring for Elementary Students",
+      tagline: "Your step-by-step checklist from applicant to mentor.",
+      startButton: "See the steps",
+      browserTitle: "Lunch Buddies Mentor Checklist | Big Brothers Big Sisters of the Greater Sacramento Area",
+      metaDescription: "Your step-by-step checklist for becoming a Lunch Buddies mentor with Big Brothers Big Sisters of the Greater Sacramento Area.",
       orgName: "Big Brothers Big Sisters of the Greater Sacramento Area",
-      tagline: "Your checklist from applicant to mentor at a school site.",
       skipLink: "Skip to the checklist",
-      introText: "Follow these steps to become a mentor at a school site. Check off each step when you finish it. Some steps need to happen in order, and each step tells you when to do it.",
+      aboutHeading: "What is Lunch Buddies?",
+      aboutText: "Lunch Buddies is a site-based mentoring program that connects elementary students with caring mentors who offer encouragement, positive role modeling, and consistent support. Through regular mentoring sessions, students build confidence, strengthen social-emotional skills, and feel a stronger sense of belonging at school.",
+      checklistHeading: "Your checklist",
+      introText: "Follow these steps to become a Lunch Buddies mentor. Check off each step when you finish it. Some steps need to happen in order, and each step tells you when to do it.",
       privacyNote: "This page does not collect your information. Your checkmarks are saved only in this browser on this device. BBBS staff keep your official record.",
       progress: "{done} of {total} steps done",
       allDone: "You finished every step. Welcome to the BBBS family!",
@@ -66,24 +72,30 @@ window.SITE_CONTENT = {
       comingSoon: "Link coming soon. If you need it now, contact us below.",
       englishOnly: "",
       stageDone: "Stage complete",
-      contactHeading: "Questions? Contact us",
+      contactHeading: "Want more info?",
       contactIntro: "We’re happy to help with any step. You can also reply to any email from us.",
       faqHeading: "Common questions",
       emailLabel: "Email",
       phoneLabel: "Phone",
-      footer: "Big Brothers Big Sisters of the Greater Sacramento Area. This checklist does not collect or store your information.",
+      footer: "Lunch Buddies, a program of Big Brothers Big Sisters of the Greater Sacramento Area. This checklist does not collect or store your information.",
       loadError: "The checklist could not load. Please try again later, or email us for help."
     },
 
     // SPANISH REVIEW: needs bilingual review before launch
     es: {
-      pageTitle: "Sea mentor/a en una escuela",
-      browserTitle: "Lista de pasos para mentores en escuelas | Big Brothers Big Sisters of the Greater Sacramento Area",
-      metaDescription: "Su lista de pasos para ser mentor/a en una escuela con Big Brothers Big Sisters of the Greater Sacramento Area.",
+      eyebrow: "Sea mentor/a",
+      pageTitle: "Lunch Buddies",
+      programTagline: "Mentoría centrada en las relaciones para estudiantes de primaria",
+      tagline: "Su lista de pasos para pasar de solicitante a mentor/a.",
+      startButton: "Ver los pasos",
+      browserTitle: "Lista de pasos para mentores de Lunch Buddies | Big Brothers Big Sisters of the Greater Sacramento Area",
+      metaDescription: "Su lista de pasos para ser mentor/a de Lunch Buddies con Big Brothers Big Sisters of the Greater Sacramento Area.",
       orgName: "Big Brothers Big Sisters of the Greater Sacramento Area",
-      tagline: "Su lista de pasos para pasar de solicitante a mentor/a en una escuela.",
       skipLink: "Ir a la lista de pasos",
-      introText: "Siga estos pasos para ser mentor/a en una escuela. Marque cada paso cuando lo termine. Algunos pasos se deben hacer en orden, y cada paso le dice cuándo hacerlo.",
+      aboutHeading: "¿Qué es Lunch Buddies?",
+      aboutText: "Lunch Buddies es un programa de mentoría en las escuelas que une a estudiantes de primaria con mentores que les dan ánimo, un buen ejemplo y apoyo constante. En sesiones regulares, los estudiantes ganan confianza, fortalecen sus habilidades socioemocionales y sienten que forman parte de su comunidad escolar.",
+      checklistHeading: "Su lista de pasos",
+      introText: "Siga estos pasos para ser mentor/a de Lunch Buddies. Marque cada paso cuando lo termine. Algunos pasos se deben hacer en orden, y cada paso le dice cuándo hacerlo.",
       privacyNote: "Esta página no recopila su información. Sus marcas se guardan solo en este navegador, en este dispositivo. El personal de BBBS guarda su expediente oficial.",
       progress: "{done} de {total} pasos terminados",
       allDone: "¡Terminó todos los pasos! Bienvenido/a a la familia de BBBS.",
@@ -97,15 +109,43 @@ window.SITE_CONTENT = {
       comingSoon: "El enlace estará disponible pronto. Si lo necesita ahora, comuníquese con nosotros (vea abajo).",
       englishOnly: "Por ahora, la página de este enlace está solo en inglés. Si necesita ayuda, comuníquese con nosotros.",
       stageDone: "Etapa terminada",
-      contactHeading: "¿Preguntas? Comuníquese con nosotros",
+      contactHeading: "¿Quiere más información?",
       contactIntro: "Con gusto le ayudamos con cualquier paso. También puede responder a cualquier correo electrónico que le enviemos.",
       faqHeading: "Preguntas frecuentes",
       emailLabel: "Correo electrónico",
       phoneLabel: "Teléfono",
-      footer: "Big Brothers Big Sisters of the Greater Sacramento Area. Esta lista no recopila ni guarda su información.",
+      footer: "Lunch Buddies, un programa de Big Brothers Big Sisters of the Greater Sacramento Area. Esta lista no recopila ni guarda su información.",
       loadError: "No se pudo cargar la lista. Intente más tarde o escríbanos para pedir ayuda."
     }
   },
+
+  /* --------------------------------------------------------------
+     PROGRAM HIGHLIGHTS (the four tiles from the Lunch Buddies flyer)
+     icon can be: "people", "calendar", "chat" or "school".
+     Delete all blocks to hide the tiles.
+     -------------------------------------------------------------- */
+  highlights: [
+    {
+      icon: "people",
+      en: "One-to-one mentoring with trained and screened mentors",
+      es: "Mentoría individual con mentores capacitados y evaluados"
+    },
+    {
+      icon: "calendar",
+      en: "Regular sessions during the school day in a safe, structured setting",
+      es: "Sesiones regulares durante el día escolar, en un ambiente seguro y organizado"
+    },
+    {
+      icon: "chat",
+      en: "Activities that build confidence, communication, and positive peer interaction",
+      es: "Actividades que fomentan la confianza, la comunicación y la buena convivencia con los compañeros"
+    },
+    {
+      icon: "school",
+      en: "Support that strengthens connection to school and overall well-being",
+      es: "Apoyo que fortalece la conexión con la escuela y el bienestar general"
+    }
+  ],
 
   /* --------------------------------------------------------------
      STAGES (the six stops on the roadmap)
@@ -114,8 +154,8 @@ window.SITE_CONTENT = {
   stages: [
     {
       id: "lunch-and-learn",
-      en: { title: "Lunch and Learn", intro: "Find out what it’s like to mentor at a school." },
-      es: { title: "Almuerzo informativo (Lunch and Learn)", intro: "Conozca cómo es ser mentor/a en una escuela." }
+      en: { title: "Lunch and Learn", intro: "Find out what it’s like to be a Lunch Buddies mentor." },
+      es: { title: "Almuerzo informativo (Lunch and Learn)", intro: "Conozca cómo es ser mentor/a de Lunch Buddies." }
     },
     {
       id: "application",
@@ -169,13 +209,13 @@ window.SITE_CONTENT = {
       en: {
         title: "Attend a Lunch and Learn and fill out the interest form",
         when: "",
-        description: "BBBS staff explain how school-site mentoring works and answer your questions. Afterward, fill out the short interest form so we can send you the application. Can’t attend? Contact us and we’ll help you get started.",
+        description: "BBBS staff explain how Lunch Buddies works and answer your questions. Afterward, fill out the short interest form so we can send you the application. Can’t attend? Contact us and we’ll help you get started.",
         linkText: "Open the interest form"
       },
       es: {
         title: "Asista a un almuerzo informativo y llene el formulario de interés",
         when: "",
-        description: "El personal de BBBS explica cómo funciona la mentoría en las escuelas y responde sus preguntas. Después, llene el formulario de interés breve para que le enviemos la solicitud. ¿No puede asistir? Comuníquese con nosotros y le ayudamos a empezar.",
+        description: "El personal de BBBS explica cómo funciona Lunch Buddies y responde sus preguntas. Después, llene el formulario de interés breve para que le enviemos la solicitud. ¿No puede asistir? Comuníquese con nosotros y le ayudamos a empezar.",
         linkText: "Abrir el formulario de interés"
       }
     },

@@ -1,60 +1,65 @@
 /* =====================================================================
    COLORS AND FONTS
-   To match official BBBS brand guidelines, change the values in this
-   first block only. Text colors must keep at least a 4.5:1 contrast
-   ratio with their background (check at webaim.org/resources/contrastchecker).
-   The greens below were picked from the Site-Based Big Process flyer.
+   Colors were picked from the Lunch Buddies flyer. To match official
+   BBBS brand guidelines, change the values in this first block only.
+   Text colors must keep at least a 4.5:1 contrast ratio with their
+   background (check at webaim.org/resources/contrastchecker).
    ===================================================================== */
 :root {
-  --brand: #0a6b45;          /* header, buttons. White text on it: 6.5:1 */
-  --brand-hover: #07583a;
-  --on-brand: #ffffff;       /* text on --brand */
-  --accent: #2ee88a;         /* bright flyer green. Decoration only, never text on white */
+  --brand: #0a714e;          /* flyer green. White text on it: 6:1 */
+  --brand-hover: #085c40;
+  --on-brand: #ffffff;
+  --mint: #00fb87;           /* flyer mint. Use with black text only, never as text on white */
+  --on-mint: #000000;
+  --band: #000000;           /* the flyer's black bands */
+  --on-band: #ffffff;
+  --on-band-muted: #cfd8d3;
 
-  --page: #f4f7f5;
+  --page: #f2f6f4;
   --surface: #ffffff;
-  --text: #17201b;
-  --text-muted: #46524b;     /* 7.5:1 on white */
-  --link: #0a6b45;
+  --text: #111a15;
+  --text-muted: #46524b;
+  --link: #0a714e;
   --border: #c5d0ca;
 
   --road: #c9d1cc;           /* the roadmap line before a stage is done */
   --road-stripe: #ffffff;
-  --road-done: #0a6b45;      /* the roadmap line after a stage is done */
-  --road-done-stripe: #2ee88a;
+  --road-done: #0a714e;      /* the roadmap line after a stage is done */
+  --road-done-stripe: #00fb87;
 
-  --done-surface: #e9f6ef;
-  --done-border: #0a6b45;
+  --done-surface: #e6f6ee;
+  --done-border: #0a714e;
   --note-surface: #fff5d6;
   --note-border: #9a6b00;
-  --focus: #17201b;
-  --focus-on-brand: #ffffff;
-  --checkbox: #0a6b45;
+  --checkbox: #0a714e;
+  --focus: #111a15;
+  --focus-on-dark: #ffffff;
 
-  --font-display: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Headline font: tall, condensed capitals like the flyer. Uses fonts
+     already on most phones and computers, so nothing loads from outside.
+     If BBBS has brand font files, add them to the repo and list them first. */
+  --font-display: "Bebas Neue", "Oswald", "Avenir Next Condensed", "Roboto Condensed", "sans-serif-condensed", "Bahnschrift", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --page: #0f1512;
-    --surface: #18211c;
-    --text: #e9f0ec;
-    --text-muted: #b5c3bb;
-    --link: #7ce8b0;
-    --border: #36443c;
+    --page: #0b100d;
+    --surface: #151d19;
+    --text: #e8f0ec;
+    --text-muted: #b2c0b8;
+    --link: #4ff3a6;
+    --border: #34443b;
 
-    --road: #3a4740;
-    --road-stripe: #6b7a72;
-    --road-done: #0a6b45;
-    --road-done-stripe: #2ee88a;
+    --road: #36443c;
+    --road-stripe: #67776e;
 
-    --done-surface: #133022;
-    --done-border: #7ce8b0;
+    --done-surface: #0f2c1f;
+    --done-border: #4ff3a6;
     --note-surface: #2f2810;
     --note-border: #e0b84a;
-    --focus: #e9f0ec;
-    --checkbox: #7ce8b0;
+    --checkbox: #4ff3a6;
+    --focus: #e8f0ec;
   }
 }
 
@@ -84,9 +89,25 @@ body {
 
 h1,
 h2,
-h3 {
-  font-family: var(--font-display);
+h3,
+h4 {
   line-height: 1.2;
+}
+
+/* Flyer-style headline lettering */
+.program-name,
+.about h2,
+.checklist-heading,
+.stage-title,
+.faq h2,
+.contact h2 {
+  font-family: var(--font-display);
+  font-stretch: condensed;
+  font-weight: 800;
+  font-synthesis: none;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
 }
 
 a {
@@ -99,11 +120,18 @@ a {
   outline-offset: 2px;
 }
 
+.site-header :focus-visible,
+.about :focus-visible,
+.contact :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--focus-on-dark);
+}
+
 .wrap {
   width: 100%;
-  max-width: 40rem;
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 0 1.125rem;
+  padding: 0 1rem;
 }
 
 .visually-hidden {
@@ -134,32 +162,40 @@ a {
   top: 0;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header: logo tab, green hero, pattern band ---------- */
 
-.site-header {
-  background: var(--brand);
-  color: var(--on-brand);
-  padding: 0.75rem 0 1.75rem;
-}
-
-.site-header :focus-visible {
-  outline-color: var(--focus-on-brand);
-}
-
-.header-top {
+.logo-bar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  justify-content: center;
+  background: var(--band);
 }
 
-.org-name {
-  margin: 0;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.3;
-  max-width: 16rem;
+.logo-tab {
+  padding: 0.875rem 1.375rem 1rem;
+  background: var(--brand);
+  border-radius: 0 0 1.125rem 1.125rem;
+}
+
+.logo {
+  display: block;
+  width: 13rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero {
+  padding: 0.75rem 0 2rem;
+  background-color: var(--brand);
+  background-image: url("assets/hero-lines.svg");
+  background-repeat: no-repeat;
+  background-position: right -4.5rem top 3rem;
+  background-size: 19rem auto;
+  color: var(--on-brand);
+}
+
+.hero-top {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .lang-toggle {
@@ -184,28 +220,139 @@ a {
 }
 
 .lang-toggle button[aria-pressed="true"] {
-  background: var(--on-brand);
-  color: var(--brand);
+  background: var(--mint);
+  color: var(--on-mint);
 }
 
-.header-main h1 {
-  margin: 1.5rem 0 0.375rem;
-  font-size: clamp(2.125rem, 9vw, 3.25rem);
+.eyebrow {
+  margin: 1.25rem 0 0;
+  font-size: 0.9375rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.program-name {
+  margin: 0.1em 0 0.2em;
+  font-size: clamp(3.75rem, 20vw, 7rem);
+}
+
+.program-pill {
+  margin: 0;
+}
+
+.program-pill span {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--mint);
+  color: var(--on-mint);
+  border-radius: 0.75rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 .tagline {
-  margin: 0;
+  margin: 1rem 0 0;
   font-size: 1.125rem;
   max-width: 30rem;
 }
 
+.hero-action {
+  margin: 1.25rem 0 0;
+}
+
+.button-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.625rem 1.25rem;
+  background: var(--band);
+  color: var(--on-band);
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.button-start:hover {
+  background: #1a1a1a;
+}
+
+.icon-down {
+  flex: none;
+  color: var(--mint);
+}
+
+.pattern-band {
+  height: 3.25rem;
+  background: var(--band) url("assets/pattern.svg") repeat-x center / auto 1.375rem;
+}
+
+/* ---------- About Lunch Buddies (black band with flyer tiles) ---------- */
+
+.about {
+  padding: 0.5rem 0 2.5rem;
+  background: var(--band);
+  color: var(--on-band);
+}
+
+.about h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.about-text {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.highlights[hidden] {
+  display: none;
+}
+
+.highlight {
+  padding: 1rem 0.75rem 1.125rem;
+  background: var(--brand);
+  border: 3px solid var(--on-band);
+  border-radius: 1.125rem;
+  color: var(--on-brand);
+  text-align: center;
+}
+
+.highlight-icon {
+  display: block;
+  width: 2.125rem;
+  height: 2.125rem;
+  margin: 0 auto 0.5rem;
+  color: var(--mint);
+}
+
+.highlight p {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
 /* ---------- Intro and progress ---------- */
 
+.checklist-heading {
+  margin: 2.5rem 0 0;
+  font-size: 2.75rem;
+}
+
 .intro {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 .intro p {
@@ -221,13 +368,12 @@ a {
   margin-top: 1.25rem;
   padding: 1rem 1.125rem 1.125rem;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 1.125rem;
 }
 
 .progress-text {
   margin: 0 0 0.625rem;
-  font-family: var(--font-display);
   font-size: 1.1875rem;
   font-weight: 800;
 }
@@ -263,7 +409,7 @@ a {
   background: transparent;
   color: var(--link);
   border: 2px solid var(--link);
-  border-radius: 0.625rem;
+  border-radius: 0.75rem;
   font: inherit;
   font-size: 1rem;
   font-weight: 700;
@@ -289,7 +435,7 @@ a {
   padding: 0 0 2.25rem 3.25rem;
 }
 
-/* The road line, with a dashed center stripe like the flyer */
+/* The road line, with a dashed center stripe */
 .stage::before {
   content: "";
   position: absolute;
@@ -326,7 +472,6 @@ a {
   background: var(--surface);
   border: 3px solid var(--road);
   color: var(--text);
-  font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 800;
 }
@@ -344,7 +489,6 @@ a {
 
 .stage-label {
   display: block;
-  font-family: var(--font-body);
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -352,13 +496,12 @@ a {
 
 .stage-title {
   display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  margin-top: 0.125rem;
+  font-size: 2rem;
 }
 
 .stage-intro {
-  margin: 0.25rem 0 0;
+  margin: 0.375rem 0 0;
   color: var(--text-muted);
 }
 
@@ -392,8 +535,8 @@ a {
   margin-top: 0.75rem;
   padding: 1rem;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0.875rem;
+  border: 2px solid var(--border);
+  border-radius: 1.125rem;
 }
 
 .step.is-done {
@@ -429,7 +572,6 @@ a {
 
 .step-number {
   display: block;
-  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -476,10 +618,10 @@ a {
   align-items: center;
   gap: 0.5rem;
   min-height: 44px;
-  padding: 0.625rem 1rem;
+  padding: 0.625rem 1.125rem;
   background: var(--brand);
   color: var(--on-brand);
-  border-radius: 0.625rem;
+  border-radius: 0.75rem;
   font-weight: 700;
   line-height: 1.25;
   text-decoration: none;
@@ -496,13 +638,12 @@ a {
 /* ---------- Common questions ---------- */
 
 .faq {
-  margin-top: 2.5rem;
+  margin-top: 2.75rem;
 }
 
 .faq h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.375rem;
-  font-weight: 800;
+  margin: 0 0 0.625rem;
+  font-size: 2.25rem;
 }
 
 .faq-item {
@@ -528,33 +669,35 @@ a {
   padding-left: 1.25rem;
 }
 
-/* ---------- Contact and footer ---------- */
+/* ---------- Contact (green block like the flyer footer) ---------- */
+
+.contact-band {
+  margin-top: 3rem;
+}
 
 .contact {
-  margin-top: 2.5rem;
-  padding: 1.25rem 1.125rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
+  padding: 2rem 0 2.25rem;
+  background: var(--brand);
+  color: var(--on-brand);
 }
 
 .contact h2 {
   margin: 0;
-  font-size: 1.375rem;
-  font-weight: 800;
+  font-size: 2.75rem;
 }
 
 .contact p {
-  margin: 0.375rem 0 0;
+  margin: 0.5rem 0 0;
 }
 
 .contact-name {
-  font-weight: 700;
-  margin-top: 0.875rem !important;
+  margin-top: 1.25rem !important;
+  font-weight: 800;
+  font-size: 1.125rem;
 }
 
 .contact-list {
-  margin: 0.5rem 0 0;
+  margin: 0.25rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -566,21 +709,24 @@ a {
 .contact-label {
   display: block;
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .contact-list a {
   display: inline-block;
   padding: 0.25rem 0;
-  font-size: 1.125rem;
-  font-weight: 600;
+  color: var(--on-brand);
+  font-size: 1.25rem;
+  font-weight: 800;
   overflow-wrap: anywhere;
 }
 
+/* ---------- Footer ---------- */
+
 .site-footer {
-  margin-top: 2.5rem;
-  padding: 1.5rem 0 2.5rem;
-  color: var(--text-muted);
+  padding: 1.25rem 0 2.5rem;
+  background: var(--band);
+  color: var(--on-band-muted);
   font-size: 0.875rem;
 }
 
@@ -603,12 +749,41 @@ a {
     padding: 0 1.5rem;
   }
 
-  .site-header {
-    padding-bottom: 2.25rem;
+  .logo {
+    width: 15rem;
   }
 
-  .org-name {
-    max-width: none;
+  .hero {
+    padding-bottom: 2.75rem;
+    background-position: right 1.5rem top 3.5rem;
+    background-size: 25rem auto;
+  }
+
+  .about {
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-name {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 48em) {
+  .highlights {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -622,14 +797,34 @@ a {
 
 @media print {
   .lang-toggle,
+  .hero-action,
   .button-secondary,
   .skip-link,
+  .pattern-band,
   .icon-external {
     display: none !important;
   }
 
-  .site-header {
-    background: none;
+  .logo-bar,
+  .logo-tab,
+  .hero,
+  .about,
+  .highlight,
+  .contact,
+  .site-footer {
+    background: none !important;
+    color: #000 !important;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .program-pill span {
+    padding: 0;
+  }
+
+  .contact-list a {
     color: #000;
   }
 
