@@ -718,6 +718,16 @@
     var description = translated(step, "description");
     if (description) details.appendChild(make("p", "step-description", description));
 
+    // Optional list of short instructions under the description.
+    var points = translated(step, "details");
+    if (Array.isArray(points) && points.length) {
+      var pointList = make("ul", "step-list");
+      points.forEach(function (point) {
+        if (point) pointList.appendChild(make("li", null, point));
+      });
+      details.appendChild(pointList);
+    }
+
     // Pick the link: the Spanish form if there is one, otherwise the main link.
     var spanishLink = language === "es" ? safeWebLink(step.linkEs) : null;
     var link = spanishLink || safeWebLink(step.link);

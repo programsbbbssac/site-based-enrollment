@@ -103,7 +103,7 @@ The Spanish text in `steps.js` is a first draft. A bilingual staff member must r
 ## Changing colors, logo and fonts
 
 - Colors are in the first two blocks of `styles.css`: the site colors, then one **theme** per program (`green` for Lunch Buddies and the home page, `light` for Level Up!, `forest` for Big Futures, `charcoal` for High School Bigs). They were picked from the flyers.
-- The logo is `assets/bbbs-logo.png`, taken from a flyer. To use a sharper official file, replace it with a PNG of the same name (white logo on a transparent background, at least 700 pixels wide).
+- The logo is `assets/bbbs-logo.png`: the official BBBS of the Greater Sacramento Area logo, reversed to white with mint arcs for the green header. `assets/bbbs-logo-color.png` is the full-color version on a transparent background, for anything with a light background.
 - `assets/pattern.svg` is the flyers' line pattern. `assets/hero-lines.svg` and `assets/hero-lines-dark.svg` are the faint versions in the headers.
 - The headline font uses condensed fonts already on people's devices, so nothing loads from outside. If BBBS has official brand font files, add them to the repo and list them first in `--font-display`.
 - After changing `styles.css`, `steps.js` or `app.js`, raise the `?v=` number on their links in `index.html` so visitors get the new files.
@@ -115,13 +115,14 @@ Already on. For reference: **Settings → Pages**, Source **Deploy from a branch
 ## Before launch checklist
 
 - [ ] Every `COMING SOON` link replaced (or changed to `""` if not needed)
-- [ ] Big Futures and High School Bigs application links confirmed
+- [ ] Big Futures application confirmed (currently the same form as Lunch Buddies)
+- [ ] High School Bigs application link (if we keep High School Bigs)
 - [ ] High School Bigs parent permission form link
 - [ ] Steps for Level Up!, Big Futures and High School Bigs confirmed, then `draft: false`
 - [ ] Interview booking link: confirm it's fine to keep it public, or use a shared team booking page
-- [ ] Spanish text reviewed by bilingual staff
+- [ ] Spanish text reviewed by bilingual staff (Marco)
 - [ ] Contact phone number added, or left empty on purpose
-- [ ] Brand colors and logo approved
+- [ ] Brand colors approved
 - [ ] Tested on an iPhone and an Android phone, in both languages
 - [ ] Tested with a screen reader (VoiceOver on iPhone or TalkBack on Android)
 

@@ -280,6 +280,8 @@ window.SITE_CONTENT = {
                  link: full https:// address, "COMING SOON", or "".
                  englishOnly: true tells Spanish readers the link is in
                  English only.
+                 details: optional list of short instructions, shown as
+                 bullet points under the description.
      faq         Common questions for that program.
      -------------------------------------------------------------- */
   programs: [
@@ -350,19 +352,43 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "COMING SOON", // TODO: mandated reporter training link
+          link: "https://mandatedreportertraining.com/volunteers/",
           linkEs: "", englishOnly: true,
-          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          en: {
+            title: "Complete mandated reporter training", when: "After you get your acceptance email",
+            description: "This online training takes about 2 hours. It teaches you how to recognize and report suspected child abuse or neglect.",
+            details: [
+              "Create an account with a valid email address, and save your password.",
+              "Confirm your email, then open the training.",
+              "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
+              "You can pause and come back to finish later.",
+              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "You don’t need to pay for a certificate, unless you want one for your records."
+            ],
+            linkText: "Open the training"
+          },
           // SPANISH REVIEW: legal (mandated reporting)
-          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+          es: {
+            title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación",
+            description: "Esta capacitación en línea dura unas 2 horas. Le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil.",
+            details: [
+              "Cree una cuenta con un correo electrónico válido y guarde su contraseña.",
+              "Confirme su correo electrónico y después abra la capacitación.",
+              "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
+              "Puede pausarla y volver después para terminarla.",
+              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
+            ],
+            linkText: "Abrir la capacitación"
+          }
         },
         {
           id: "live-scan", stage: "welcome",
-          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          link: "https://www.bbbs-sac.org/resource", // BBBS resources page with the Live Scan Background Check Form
           linkEs: "", englishOnly: true,
-          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Download the Live Scan form from our resources page, then take it to a Live Scan location with a photo ID.", linkText: "Get the Live Scan form" },
           // SPANISH REVIEW: legal (fingerprinting and background check)
-          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Descargue el formulario de Live Scan de nuestra página de recursos y llévelo a un lugar de Live Scan junto con una identificación con foto.", linkText: "Obtener el formulario de Live Scan" }
         },
         {
           id: "tb-clearance", stage: "welcome",
@@ -473,19 +499,43 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "COMING SOON", // TODO: mandated reporter training link
+          link: "https://mandatedreportertraining.com/volunteers/",
           linkEs: "", englishOnly: true,
-          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          en: {
+            title: "Complete mandated reporter training", when: "After you get your acceptance email",
+            description: "This online training takes about 2 hours. It teaches you how to recognize and report suspected child abuse or neglect.",
+            details: [
+              "Create an account with a valid email address, and save your password.",
+              "Confirm your email, then open the training.",
+              "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
+              "You can pause and come back to finish later.",
+              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "You don’t need to pay for a certificate, unless you want one for your records."
+            ],
+            linkText: "Open the training"
+          },
           // SPANISH REVIEW: legal (mandated reporting)
-          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+          es: {
+            title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación",
+            description: "Esta capacitación en línea dura unas 2 horas. Le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil.",
+            details: [
+              "Cree una cuenta con un correo electrónico válido y guarde su contraseña.",
+              "Confirme su correo electrónico y después abra la capacitación.",
+              "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
+              "Puede pausarla y volver después para terminarla.",
+              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
+            ],
+            linkText: "Abrir la capacitación"
+          }
         },
         {
           id: "live-scan", stage: "welcome",
-          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          link: "https://www.bbbs-sac.org/resource", // BBBS resources page with the Live Scan Background Check Form
           linkEs: "", englishOnly: true,
-          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Download the Live Scan form from our resources page, then take it to a Live Scan location with a photo ID.", linkText: "Get the Live Scan form" },
           // SPANISH REVIEW: legal (fingerprinting and background check)
-          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Descargue el formulario de Live Scan de nuestra página de recursos y llévelo a un lugar de Live Scan junto con una identificación con foto.", linkText: "Obtener el formulario de Live Scan" }
         },
         {
           id: "tb-clearance", stage: "welcome",
@@ -573,17 +623,19 @@ window.SITE_CONTENT = {
       steps: [
         {
           id: "application", stage: "application",
-          link: "COMING SOON", // TODO: confirm which application Big Futures mentors use
+          link: "https://bbbs.tfaforms.net/5007784", // Believed to be the same application as Lunch Buddies. TODO: confirm with Jade
           linkEs: "", englishOnly: true,
-          en: { title: "Complete the Big Futures application", when: "", description: "Tell us about yourself. If you’re joining through your workplace, your company contact may share the link with you. The application also includes the BBBS Code of Conduct.", linkText: "Open the application" },
+          en: { title: "Complete the volunteer application", when: "", description: "Tell us about yourself. The application also includes the BBBS Code of Conduct, so read it carefully.", linkText: "Open the application" },
           // SPANISH REVIEW: legal (Code of Conduct)
-          es: { title: "Complete la solicitud de Big Futures", when: "", description: "Cuéntenos sobre usted. Si participa a través de su trabajo, la persona de contacto de su empresa puede compartirle el enlace. La solicitud también incluye el Código de Conducta de BBBS.", linkText: "Abrir la solicitud" }
+          es: { title: "Complete la solicitud de voluntario/a", when: "", description: "Cuéntenos sobre usted. La solicitud también incluye el Código de Conducta de BBBS, así que léalo con cuidado.", linkText: "Abrir la solicitud" }
         },
         {
           id: "interview", stage: "interview",
-          link: "", linkEs: "", englishOnly: false,
-          en: { title: "Talk with BBBS staff", when: "After you submit your application", description: "We’ll email you to set up a short conversation so we can get to know you and answer your questions.", linkText: "" },
-          es: { title: "Hable con el personal de BBBS", when: "Después de enviar su solicitud", description: "Le enviaremos un correo electrónico para programar una conversación breve, para conocerle y responder sus preguntas.", linkText: "" }
+          // Interviews are with Marco Ramos, same booking page as Lunch Buddies.
+          link: "https://bookings.cloud.microsoft/bookwithme/user/156962517c494942b4e8305270af8ed2@bbbs-sac.org/meetingtype/cerTDQhhNkibRiy_8GZk5Q2?anonymous&ismsaljsauthenabled&ep=mcard",
+          linkEs: "", englishOnly: true,
+          en: { title: "Book and do your 15-minute virtual interview", when: "Right after you submit your application", description: "Pick a time that works for you. The interview is a short, friendly online meeting so we can get to know you and answer your questions.", linkText: "Book your interview" },
+          es: { title: "Programe y haga su entrevista virtual de 15 minutos", when: "Justo después de enviar su solicitud", description: "Escoja una hora que le convenga. La entrevista es una reunión en línea breve y amistosa para conocerle y responder sus preguntas.", linkText: "Programar su entrevista" }
         },
         {
           id: "references", stage: "interview",
@@ -594,19 +646,43 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "COMING SOON", // TODO: mandated reporter training link
+          link: "https://mandatedreportertraining.com/volunteers/",
           linkEs: "", englishOnly: true,
-          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          en: {
+            title: "Complete mandated reporter training", when: "After you get your acceptance email",
+            description: "This online training takes about 2 hours. It teaches you how to recognize and report suspected child abuse or neglect.",
+            details: [
+              "Create an account with a valid email address, and save your password.",
+              "Confirm your email, then open the training.",
+              "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
+              "You can pause and come back to finish later.",
+              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "You don’t need to pay for a certificate, unless you want one for your records."
+            ],
+            linkText: "Open the training"
+          },
           // SPANISH REVIEW: legal (mandated reporting)
-          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+          es: {
+            title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación",
+            description: "Esta capacitación en línea dura unas 2 horas. Le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil.",
+            details: [
+              "Cree una cuenta con un correo electrónico válido y guarde su contraseña.",
+              "Confirme su correo electrónico y después abra la capacitación.",
+              "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
+              "Puede pausarla y volver después para terminarla.",
+              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
+            ],
+            linkText: "Abrir la capacitación"
+          }
         },
         {
           id: "live-scan", stage: "welcome",
-          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          link: "https://www.bbbs-sac.org/resource", // BBBS resources page with the Live Scan Background Check Form
           linkEs: "", englishOnly: true,
-          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Download the Live Scan form from our resources page, then take it to a Live Scan location with a photo ID.", linkText: "Get the Live Scan form" },
           // SPANISH REVIEW: legal (fingerprinting and background check)
-          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Descargue el formulario de Live Scan de nuestra página de recursos y llévelo a un lugar de Live Scan junto con una identificación con foto.", linkText: "Obtener el formulario de Live Scan" }
         },
         {
           id: "site-requirements", stage: "welcome",
@@ -703,6 +779,12 @@ window.SITE_CONTENT = {
           link: "", linkEs: "", englishOnly: false,
           en: { title: "Meet with BBBS staff", when: "", description: "We’ll email you to set up a short conversation so we can get to know you and answer your questions.", linkText: "" },
           es: { title: "Reúnase con el personal de BBBS", when: "", description: "Le enviaremos un correo electrónico para programar una conversación breve, para conocerle y responder sus preguntas.", linkText: "" }
+        },
+        {
+          id: "references", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Let your references know we’ll contact them", when: "", description: "We’ll reach out to the references you gave us. Let them know to expect a call or email from BBBS so they can reply quickly.", linkText: "" },
+          es: { title: "Avise a sus referencias que nos comunicaremos con ellas", when: "", description: "Nos comunicaremos con las referencias que nos dio. Avíseles que recibirán una llamada o un correo electrónico de BBBS para que puedan responder pronto.", linkText: "" }
         },
         {
           id: "big-training", stage: "training",

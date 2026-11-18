@@ -267,7 +267,7 @@ main:focus,
 
 .logo {
   display: block;
-  width: 13rem;
+  width: 10.5rem;
   max-width: 100%;
   height: auto;
 }
@@ -1059,6 +1059,17 @@ main:focus,
   font-size: 0.9375rem;
 }
 
+.step-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.step-list li {
+  margin-top: 0.375rem;
+  padding-left: 0.125rem;
+}
+
 .step-note {
   padding: 0.5rem 0.75rem;
   background: var(--note-surface);
@@ -1191,7 +1202,7 @@ main:focus,
   }
 
   .logo {
-    width: 15rem;
+    width: 12.5rem;
   }
 
   .hero {
