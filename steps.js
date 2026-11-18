@@ -1,5 +1,7 @@
 /* =====================================================================
-   LUNCH BUDDIES MENTOR CHECKLIST: ALL THE WORDS ON THE PAGE LIVE HERE
+   SITE-BASED MENTORING: ALL THE WORDS ON THE SITE LIVE HERE
+   The program quiz, the four program checklists, and every label,
+   in English and Spanish.
    =====================================================================
 
    ⚠ SPANISH REVIEW REQUIRED BEFORE LAUNCH ⚠
@@ -7,10 +9,17 @@
    staff member must review ALL Spanish text before this site goes live,
    especially anything about background checks, fingerprinting (Live
    Scan), the sex offender registry check, mandated reporting, TB
-   testing, the Code of Conduct, consent, or other legal requirements.
-   Sections that need extra care are marked "SPANISH REVIEW: legal".
+   testing, the Code of Conduct, parent permission, consent, or other
+   legal requirements. Sections that need extra care are marked
+   "SPANISH REVIEW: legal".
    When the review is done, delete this note and write who reviewed it
    and when, for example:  Spanish reviewed by ______ on ______.
+
+   ⚠ STEPS MARKED  draft: true  NEED STAFF REVIEW ⚠
+   Level Up!, Big Futures and High School Bigs steps were drafted from
+   the Lunch Buddies process and the program flyers. While a program has
+   draft: true, its page shows a note asking people to email us before
+   they start. Confirm the steps, then change it to draft: false.
 
    HOW TO EDIT THIS FILE (no coding needed)
    - Only change the text between the "quote marks".
@@ -20,437 +29,724 @@
      Curly quotes or apostrophes INSIDE the text are fine.
    - To add a link, replace COMING SOON with the full web address,
      starting with https://   Example:  link: "https://example.org/form",
+   - Links copied from Outlook may start with urldefense.com or
+     safelinks.protection.outlook.com. Those are email-security wrappers
+     and can carry personal data. Use the real address inside them. The
+     page hides wrapped links automatically.
    - Use "" (empty) for a step that should never show a link.
    - Never paste a link that contains someone's personal information or a
      personal/pre-filled token. Use the public, blank version of the form.
      This website is public: anyone can read this file.
-   - Never change a step's "id" after launch. Saved checkmarks use it.
-   - After you save, wait about a minute, then reload the site to check.
+   - Never change a step's "id" or a program's "id" after launch. Saved
+     checkmarks and shared links use them.
+   - Steps open one at a time, in the order they appear in this file.
+   - After you save, wait a few minutes, then reload the site to check.
    ===================================================================== */
 
 window.SITE_CONTENT = {
 
   /* --------------------------------------------------------------
-     CONTACT (shown at the bottom of the page)
+     CONTACT (shown at the bottom of every page)
      Leave phone as "" to hide it.
      -------------------------------------------------------------- */
   contact: {
-    name: "Jade Rodgers",
-    email: "jade@bbbs-sac.org",
-    phone: "" // TODO: add a phone number, e.g. "(916) 555-0100", or leave empty
+    email: "programs@bbbs-sac.org",
+    phone: "" // Optional: add a phone number, e.g. "(916) 555-0100"
   },
 
   /* --------------------------------------------------------------
-     WORDS USED AROUND THE PAGE (buttons, headings, messages)
-     {done} and {total} are filled in automatically. Keep them.
+     WORDS USED AROUND THE SITE (buttons, headings, messages)
+     Words in {curly brackets} are filled in automatically. Keep them.
      -------------------------------------------------------------- */
   ui: {
     en: {
-      eyebrow: "Become a mentor",
-      pageTitle: "Lunch Buddies",
-      programTagline: "Relationship-Centered Mentoring for Elementary Students",
-      tagline: "Your step-by-step checklist from applicant to mentor.",
-      startButton: "See the steps",
-      browserTitle: "Lunch Buddies Mentor Checklist | Big Brothers Big Sisters of the Greater Sacramento Area",
-      metaDescription: "Your step-by-step checklist for becoming a Lunch Buddies mentor with Big Brothers Big Sisters of the Greater Sacramento Area.",
       orgName: "Big Brothers Big Sisters of the Greater Sacramento Area",
-      skipLink: "Skip to the checklist",
-      aboutHeading: "What is Lunch Buddies?",
-      aboutText: "Lunch Buddies is a site-based mentoring program that connects elementary students with caring mentors who offer encouragement, positive role modeling, and consistent support. Through regular mentoring sessions, students build confidence, strengthen social-emotional skills, and feel a stronger sense of belonging at school.",
+      skipLink: "Skip to main content",
+
+      // Home page
+      homeBrowserTitle: "Site-Based Mentoring | Big Brothers Big Sisters of the Greater Sacramento Area",
+      homeMetaDescription: "Find the Big Brothers Big Sisters site-based mentoring program that fits you, then follow your step-by-step checklist.",
+      homeEyebrow: "Site-based mentoring",
+      homeTitle: "Become a Big",
+      homePill: "Mentor a student at school",
+      homeTagline: "Find the program that fits you, then follow your step-by-step checklist.",
+      quizButton: "Take the quiz",
+      programsButton: "See all programs",
+
+      // Quiz
+      quizHeading: "Which program fits you?",
+      quizIntro: "Answer up to 4 quick questions. We’ll suggest a program, and you can still choose any program you like.",
+      quizStart: "Start the quiz",
+      quizQuestionLabel: "Question {number}",
+      quizNext: "Next",
+      quizBack: "Back",
+      quizChooseError: "Choose an answer to continue.",
+      quizResultLabel: "Your best match",
+      quizAlsoFit: "Also a good fit:",
+      quizStartChecklist: "Start the {program} checklist",
+      quizRetake: "Retake the quiz",
+
+      // Program list
+      programsHeading: "Site-based programs",
+      programsIntro: "Every program meets at a school or partner site. Choose one to see your checklist.",
+      factMentors: "Who mentors",
+      factMentees: "Who you’ll mentor",
+      factWhen: "When",
+      openChecklist: "Open the {program} checklist",
+
+      // Program pages
+      programBrowserTitle: "{program} Mentor Checklist | Big Brothers Big Sisters of the Greater Sacramento Area",
+      programMetaDescription: "Your step-by-step checklist for becoming a {program} mentor with Big Brothers Big Sisters of the Greater Sacramento Area.",
+      backLink: "All programs",
+      programEyebrow: "Become a mentor",
+      programTagline: "Your step-by-step checklist from applicant to mentor.",
+      startButton: "See the steps",
+      aboutHeading: "About {program}",
       checklistHeading: "Your checklist",
-      introText: "Follow these steps to become a Lunch Buddies mentor. Check off each step when you finish it. Some steps need to happen in order, and each step tells you when to do it.",
-      privacyNote: "This page does not collect your information. Your checkmarks are saved only in this browser on this device. BBBS staff keep your official record.",
+      draftNotice: "We’re still finalizing the steps for this program. Email us before you start.",
+      introText: "Follow these steps in order. Each step opens after you check off the one before it.",
+      privacyNote: "This site does not collect your information. Your checkmarks are saved only in this browser on this device. BBBS staff keep your official record.",
       progress: "{done} of {total} steps done",
       allDone: "You finished every step. Welcome to the BBBS family!",
       resetButton: "Reset my progress",
-      resetConfirm: "Clear all your checkmarks on this device? This can’t be undone.",
+      resetConfirm: "Clear all your checkmarks for this program on this device? This can’t be undone.",
       storageWarning: "Your browser is not saving checkmarks right now (this can happen in private browsing). They will clear when you close this page.",
       stageLabel: "Stage {number}",
       stepLabel: "Step {number}",
+      upNext: "Up next",
+      lockedNote: "Finish step {number} first.",
+      lockedDoneNote: "To change this step, uncheck the steps after it first.",
       whenLabel: "When:",
       newTab: "(opens in a new tab)",
       comingSoon: "Link coming soon. If you need it now, contact us below.",
       englishOnly: "",
       stageDone: "Stage complete",
+      faqHeading: "Common questions",
+
+      // Contact and footer
       contactHeading: "Want more info?",
       contactIntro: "We’re happy to help with any step. You can also reply to any email from us.",
-      faqHeading: "Common questions",
       emailLabel: "Email",
       phoneLabel: "Phone",
-      footer: "Lunch Buddies, a program of Big Brothers Big Sisters of the Greater Sacramento Area. This checklist does not collect or store your information.",
-      loadError: "The checklist could not load. Please try again later, or email us for help."
+      footer: "Big Brothers Big Sisters of the Greater Sacramento Area. This site does not collect or store your information.",
+      loadError: "This page could not load. Please try again later, or email us for help."
     },
 
     // SPANISH REVIEW: needs bilingual review before launch
     es: {
-      eyebrow: "Sea mentor/a",
-      pageTitle: "Lunch Buddies",
-      programTagline: "Mentoría centrada en las relaciones para estudiantes de primaria",
-      tagline: "Su lista de pasos para pasar de solicitante a mentor/a.",
-      startButton: "Ver los pasos",
-      browserTitle: "Lista de pasos para mentores de Lunch Buddies | Big Brothers Big Sisters of the Greater Sacramento Area",
-      metaDescription: "Su lista de pasos para ser mentor/a de Lunch Buddies con Big Brothers Big Sisters of the Greater Sacramento Area.",
       orgName: "Big Brothers Big Sisters of the Greater Sacramento Area",
-      skipLink: "Ir a la lista de pasos",
-      aboutHeading: "¿Qué es Lunch Buddies?",
-      aboutText: "Lunch Buddies es un programa de mentoría en las escuelas que une a estudiantes de primaria con mentores que les dan ánimo, un buen ejemplo y apoyo constante. En sesiones regulares, los estudiantes ganan confianza, fortalecen sus habilidades socioemocionales y sienten que forman parte de su comunidad escolar.",
+      skipLink: "Ir al contenido principal",
+
+      homeBrowserTitle: "Mentoría en escuelas | Big Brothers Big Sisters of the Greater Sacramento Area",
+      homeMetaDescription: "Encuentre el programa de mentoría en escuelas de Big Brothers Big Sisters que mejor le queda y siga su lista de pasos.",
+      homeEyebrow: "Mentoría en escuelas",
+      homeTitle: "Sea un Big",
+      homePill: "Sea mentor/a de un estudiante en la escuela",
+      homeTagline: "Encuentre el programa que mejor le queda y siga su lista de pasos.",
+      quizButton: "Hacer el cuestionario",
+      programsButton: "Ver todos los programas",
+
+      quizHeading: "¿Qué programa le queda mejor?",
+      quizIntro: "Responda hasta 4 preguntas rápidas. Le sugeriremos un programa, y de todos modos puede escoger el que usted quiera.",
+      quizStart: "Empezar el cuestionario",
+      quizQuestionLabel: "Pregunta {number}",
+      quizNext: "Siguiente",
+      quizBack: "Atrás",
+      quizChooseError: "Escoja una respuesta para continuar.",
+      quizResultLabel: "El programa que mejor le queda",
+      quizAlsoFit: "También le podría quedar:",
+      quizStartChecklist: "Empezar la lista de {program}",
+      quizRetake: "Hacer el cuestionario otra vez",
+
+      programsHeading: "Programas en escuelas",
+      programsIntro: "Todos los programas se reúnen en una escuela o en un lugar aliado. Escoja uno para ver su lista de pasos.",
+      factMentors: "Quién es mentor/a",
+      factMentees: "A quién acompañará",
+      factWhen: "Cuándo",
+      openChecklist: "Abrir la lista de {program}",
+
+      programBrowserTitle: "Lista de pasos para mentores de {program} | Big Brothers Big Sisters of the Greater Sacramento Area",
+      programMetaDescription: "Su lista de pasos para ser mentor/a de {program} con Big Brothers Big Sisters of the Greater Sacramento Area.",
+      backLink: "Todos los programas",
+      programEyebrow: "Sea mentor/a",
+      programTagline: "Su lista de pasos para pasar de solicitante a mentor/a.",
+      startButton: "Ver los pasos",
+      aboutHeading: "Acerca de {program}",
       checklistHeading: "Su lista de pasos",
-      introText: "Siga estos pasos para ser mentor/a de Lunch Buddies. Marque cada paso cuando lo termine. Algunos pasos se deben hacer en orden, y cada paso le dice cuándo hacerlo.",
-      privacyNote: "Esta página no recopila su información. Sus marcas se guardan solo en este navegador, en este dispositivo. El personal de BBBS guarda su expediente oficial.",
+      draftNotice: "Todavía estamos terminando los pasos de este programa. Escríbanos antes de empezar.",
+      introText: "Siga estos pasos en orden. Cada paso se abre cuando marca como terminado el paso anterior.",
+      privacyNote: "Este sitio no recopila su información. Sus marcas se guardan solo en este navegador, en este dispositivo. El personal de BBBS guarda su expediente oficial.",
       progress: "{done} de {total} pasos terminados",
       allDone: "¡Terminó todos los pasos! Bienvenido/a a la familia de BBBS.",
       resetButton: "Borrar mi progreso",
-      resetConfirm: "¿Desea borrar todas sus marcas en este dispositivo? No se puede deshacer.",
+      resetConfirm: "¿Desea borrar todas sus marcas de este programa en este dispositivo? No se puede deshacer.",
       storageWarning: "Su navegador no está guardando las marcas en este momento (puede pasar en la navegación privada). Se borrarán cuando cierre esta página.",
       stageLabel: "Etapa {number}",
       stepLabel: "Paso {number}",
+      upNext: "Siguiente paso",
+      lockedNote: "Primero termine el paso {number}.",
+      lockedDoneNote: "Para cambiar este paso, primero quite la marca de los pasos que siguen.",
       whenLabel: "Cuándo:",
       newTab: "(se abre en una pestaña nueva)",
       comingSoon: "El enlace estará disponible pronto. Si lo necesita ahora, comuníquese con nosotros (vea abajo).",
       englishOnly: "Por ahora, la página de este enlace está solo en inglés. Si necesita ayuda, comuníquese con nosotros.",
       stageDone: "Etapa terminada",
+      faqHeading: "Preguntas frecuentes",
+
       contactHeading: "¿Quiere más información?",
       contactIntro: "Con gusto le ayudamos con cualquier paso. También puede responder a cualquier correo electrónico que le enviemos.",
-      faqHeading: "Preguntas frecuentes",
       emailLabel: "Correo electrónico",
       phoneLabel: "Teléfono",
-      footer: "Lunch Buddies, un programa de Big Brothers Big Sisters of the Greater Sacramento Area. Esta lista no recopila ni guarda su información.",
-      loadError: "No se pudo cargar la lista. Intente más tarde o escríbanos para pedir ayuda."
+      footer: "Big Brothers Big Sisters of the Greater Sacramento Area. Este sitio no recopila ni guarda su información.",
+      loadError: "No se pudo cargar esta página. Intente más tarde o escríbanos para pedir ayuda."
     }
   },
 
   /* --------------------------------------------------------------
-     PROGRAM HIGHLIGHTS (the four tiles from the Lunch Buddies flyer)
-     icon can be: "people", "calendar", "chat" or "school".
-     Delete all blocks to hide the tiles.
+     PROGRAM QUIZ
+
+     Questions are asked in order. Each answer can do one of three things:
+       result: "program-id"     ends the quiz with that program
+       only: ["id", "id"]       keeps only these programs as options
+                                (if one is left, the quiz ends there)
+       points: { "id": 2 }      gives points to programs
+     The program with the most points wins. Ties go to the program
+     listed first in "only".
      -------------------------------------------------------------- */
-  highlights: [
-    {
-      icon: "people",
-      en: "One-to-one mentoring with trained and screened mentors",
-      es: "Mentoría individual con mentores capacitados y evaluados"
-    },
-    {
-      icon: "calendar",
-      en: "Regular sessions during the school day in a safe, structured setting",
-      es: "Sesiones regulares durante el día escolar, en un ambiente seguro y organizado"
-    },
-    {
-      icon: "chat",
-      en: "Activities that build confidence, communication, and positive peer interaction",
-      es: "Actividades que fomentan la confianza, la comunicación y la buena convivencia con los compañeros"
-    },
-    {
-      icon: "school",
-      en: "Support that strengthens connection to school and overall well-being",
-      es: "Apoyo que fortalece la conexión con la escuela y el bienestar general"
-    }
-  ],
+  quiz: {
+    questions: [
+      {
+        id: "in-high-school",
+        en: {
+          question: "Are you in high school right now?",
+          help: "High school students mentor through High School Bigs. Our other programs are for adults."
+        },
+        es: {
+          question: "¿Está en la preparatoria (high school) ahora?",
+          help: "Los estudiantes de preparatoria participan en High School Bigs. Los demás programas son para personas adultas."
+        },
+        answers: [
+          { id: "yes", result: "high-school-bigs", en: "Yes, I’m a high school student", es: "Sí, soy estudiante de preparatoria" },
+          { id: "no", only: ["lunch-buddies", "level-up", "big-futures"], en: "No", es: "No" }
+        ]
+      },
+      {
+        id: "age-group",
+        en: { question: "Which students would you like to mentor?", help: "" },
+        es: { question: "¿A qué estudiantes le gustaría acompañar como mentor/a?", help: "" },
+        answers: [
+          { id: "elementary", only: ["lunch-buddies"], en: "Elementary school students", es: "Estudiantes de primaria" },
+          { id: "middle", only: ["level-up"], en: "Middle school students", es: "Estudiantes de secundaria (middle school)" },
+          { id: "high", only: ["level-up", "big-futures"], en: "High school students", es: "Estudiantes de preparatoria (high school)" },
+          { id: "any", only: ["lunch-buddies", "level-up", "big-futures"], en: "I’m open to any age", es: "Cualquier edad" }
+        ]
+      },
+      {
+        id: "focus",
+        en: { question: "What would you most like to help a student with?", help: "" },
+        es: { question: "¿En qué le gustaría más ayudar a un estudiante?", help: "" },
+        answers: [
+          { id: "belonging", points: { "lunch-buddies": 2, "level-up": 1 }, en: "Building confidence and feeling like they belong", es: "Ganar confianza y sentirse parte de la escuela" },
+          { id: "on-track", points: { "level-up": 2 }, en: "Showing up, staying on track and setting goals", es: "Asistir a clases, mantenerse al día y fijarse metas" },
+          { id: "future", points: { "big-futures": 2, "level-up": 1 }, en: "Planning for college and a career", es: "Planear su futuro en la universidad o en una carrera" }
+        ]
+      },
+      {
+        id: "format",
+        en: { question: "Which kind of meeting sounds best to you?", help: "" },
+        es: { question: "¿Qué tipo de reunión prefiere?", help: "" },
+        answers: [
+          { id: "one-to-one", points: { "lunch-buddies": 1, "level-up": 1 }, en: "One-to-one with the same student, twice a month at school", es: "Individual, con el mismo estudiante, dos veces al mes en la escuela" },
+          { id: "group", points: { "big-futures": 2 }, en: "A group session once a month, with other professionals", es: "Una sesión grupal una vez al mes, con otros profesionales" },
+          { id: "either", points: {}, en: "Either works for me", es: "Cualquiera de las dos" }
+        ]
+      }
+    ]
+  },
 
   /* --------------------------------------------------------------
-     STAGES (the six stops on the roadmap)
-     Each step below says which stage it belongs to.
-     -------------------------------------------------------------- */
-  stages: [
-    {
-      id: "lunch-and-learn",
-      en: { title: "Lunch and Learn", intro: "Find out what it’s like to be a Lunch Buddies mentor." },
-      es: { title: "Almuerzo informativo (Lunch and Learn)", intro: "Conozca cómo es ser mentor/a de Lunch Buddies." }
-    },
-    {
-      id: "application",
-      en: { title: "Application", intro: "Tell us about yourself." },
-      es: { title: "Solicitud", intro: "Cuéntenos sobre usted." }
-    },
-    {
-      id: "interview",
-      en: { title: "Interview", intro: "A short online meeting so we can get to know you." },
-      es: { title: "Entrevista", intro: "Una reunión breve en línea para conocerle." }
-    },
-    {
-      id: "welcome",
-      en: { title: "Welcome", intro: "Within a week after your application and interview are both done, we’ll email you to let you know if you’re accepted. Accepted volunteers then finish these steps." },
-      // SPANISH REVIEW: legal (acceptance)
-      es: { title: "Bienvenida", intro: "A más tardar una semana después de que termine su solicitud y su entrevista, le enviaremos un correo electrónico para avisarle si fue aceptado/a. Las personas aceptadas completan después estos pasos." }
-    },
-    {
-      id: "orientation",
-      en: { title: "Orientation", intro: "Get ready to start mentoring." },
-      es: { title: "Orientación", intro: "Prepárese para empezar como mentor/a." }
-    },
-    {
-      id: "launch-day",
-      en: { title: "Launch Day", intro: "Meet your Little and start mentoring." },
-      es: { title: "Día de inicio (Launch Day)", intro: "Conozca a su Little (su estudiante) y empiece la mentoría." }
-    }
-  ],
+     PROGRAMS (shown in this order on the home page)
 
-  /* --------------------------------------------------------------
-     STEPS (shown in this order)
-
-     id          Never change after launch.
-     stage       Must match one of the stage ids above.
-     link        Full https:// address, "COMING SOON", or "" for no link.
-     linkEs      Optional Spanish version of the page. Leave "" if none.
-     englishOnly true = tell Spanish readers the linked page is only in English.
-                 Set to false if the linked page is also in Spanish.
-     title       Short action, starting with a verb.
-     when        When to do it (leave "" if it doesn't matter).
-     description Plain-language explanation. Keep it short.
-     linkText    The words on the button.
+     Each program has:
+     id          Used in its web address: ...?program=lunch-buddies
+                 Add &lang=es to open it in Spanish (handy for QR codes).
+     theme       Page colors: "green", "light", "forest" or "charcoal".
+     draft       true = show a "steps are being finalized" note.
+     highlights  Tiles under the program description. icon can be:
+                 people, calendar, chat, school, target, heart, loop, cap,
+                 briefcase, compass, award, star, clock, trend, book, smile
+     stages      Groups of steps, in order.
+     steps       Each step's "stage" must match a stage id above it.
+                 link: full https:// address, "COMING SOON", or "".
+                 englishOnly: true tells Spanish readers the link is in
+                 English only.
+     faq         Common questions for that program.
      -------------------------------------------------------------- */
-  steps: [
-    {
-      id: "interest-form",
-      stage: "lunch-and-learn",
-      link: "COMING SOON", // TODO: interest form link
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Attend a Lunch and Learn and fill out the interest form",
-        when: "",
-        description: "BBBS staff explain how Lunch Buddies works and answer your questions. Afterward, fill out the short interest form so we can send you the application. Can’t attend? Contact us and we’ll help you get started.",
-        linkText: "Open the interest form"
-      },
-      es: {
-        title: "Asista a un almuerzo informativo y llene el formulario de interés",
-        when: "",
-        description: "El personal de BBBS explica cómo funciona Lunch Buddies y responde sus preguntas. Después, llene el formulario de interés breve para que le enviemos la solicitud. ¿No puede asistir? Comuníquese con nosotros y le ayudamos a empezar.",
-        linkText: "Abrir el formulario de interés"
-      }
-    },
-    {
-      id: "application",
-      stage: "application",
-      link: "https://bbbs.tfaforms.net/5007784",
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Complete the volunteer application",
-        when: "As soon as possible",
-        description: "You can book your interview (the next step) at the same time. You don’t need to wait for us to review your application first.",
-        linkText: "Open the application"
-      },
-      es: {
-        title: "Complete la solicitud de voluntario/a",
-        when: "Lo antes posible",
-        description: "Puede programar su entrevista (el siguiente paso) al mismo tiempo. No tiene que esperar a que revisemos su solicitud.",
-        linkText: "Abrir la solicitud"
-      }
-    },
-    {
-      id: "interview",
-      stage: "interview",
-      // Marco Ramos's public Microsoft Bookings page. If the interviewer changes, replace this link.
-      link: "https://bookings.cloud.microsoft/bookwithme/user/156962517c494942b4e8305270af8ed2@bbbs-sac.org/meetingtype/cerTDQhhNkibRiy_8GZk5Q2?anonymous&ismsaljsauthenabled&ep=mcard",
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Book and do your 15-minute virtual interview",
-        when: "Right away, at the same time as your application",
-        description: "Pick a time that works for you. The interview is a short, friendly online meeting so we can get to know you and answer your questions.",
-        linkText: "Book your interview"
-      },
-      es: {
-        title: "Programe y haga su entrevista virtual de 15 minutos",
-        when: "Ahora mismo, al mismo tiempo que su solicitud",
-        description: "Escoja una hora que le convenga. La entrevista es una reunión en línea breve y amistosa para conocerle y responder sus preguntas.",
-        linkText: "Programar su entrevista"
-      }
-    },
-    {
-      id: "references",
-      stage: "interview",
-      link: "", // TODO: add details or a link if applicants submit references somewhere
-      linkEs: "",
-      englishOnly: false,
-      en: {
-        title: "Let your references know we’ll contact them",
-        when: "After your interview",
-        description: "We’ll reach out to the references you gave us. Let them know to expect a call or email from BBBS so they can reply quickly. We also check the state and federal sex offender registries and public records. You don’t need to do anything for those checks.",
-        linkText: "Learn about references"
-      },
-      // SPANISH REVIEW: legal (registry and public records checks)
-      es: {
-        title: "Avise a sus referencias que nos comunicaremos con ellas",
-        when: "Después de su entrevista",
-        description: "Nos comunicaremos con las referencias que nos dio. Avíseles que recibirán una llamada o un correo electrónico de BBBS para que puedan responder pronto. También revisamos los registros estatales y federales de delincuentes sexuales y los registros públicos. Usted no tiene que hacer nada para esas revisiones.",
-        linkText: "Información sobre las referencias"
-      }
-    },
-    {
-      id: "mandated-reporter",
-      stage: "welcome",
-      link: "COMING SOON", // TODO: mandated reporter training link
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Complete mandated reporter training",
-        when: "After you get your acceptance email",
-        description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.",
-        linkText: "Open the training"
-      },
-      // SPANISH REVIEW: legal (mandated reporting)
-      es: {
-        title: "Complete la capacitación para reporteros obligatorios (mandated reporter)",
-        when: "Después de recibir su correo de aceptación",
-        description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.",
-        linkText: "Abrir la capacitación"
-      }
-    },
-    {
-      id: "live-scan",
-      stage: "welcome",
-      link: "COMING SOON", // TODO: Live Scan instructions or request form
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Get fingerprinted with Live Scan",
-        when: "After you get your acceptance email",
-        description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.",
-        linkText: "Open the Live Scan instructions"
-      },
-      // SPANISH REVIEW: legal (fingerprinting and background check)
-      es: {
-        title: "Tómese las huellas digitales con Live Scan",
-        when: "Después de recibir su correo de aceptación",
-        description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.",
-        linkText: "Abrir las instrucciones de Live Scan"
-      }
-    },
-    {
-      id: "tb-clearance",
-      stage: "welcome",
-      link: "", // Optional: add a link with places to get a TB test or risk assessment
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Get your TB clearance",
-        when: "After you get your acceptance email",
-        description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. We’ll need a copy of your clearance document.",
-        linkText: "Find a place to get cleared"
-      },
-      // SPANISH REVIEW: legal (health requirement)
-      es: {
-        title: "Obtenga su constancia de tuberculosis (TB clearance)",
-        when: "Después de recibir su correo de aceptación",
-        description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Necesitaremos una copia de esa constancia.",
-        linkText: "Buscar dónde obtener la constancia"
-      }
-    },
-    {
-      id: "district-clearance",
-      stage: "welcome",
-      link: "COMING SOON", // TODO: school district volunteer clearance packet link
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Complete the school district volunteer clearance, if your school needs it",
-        when: "After you get your acceptance email",
-        description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it. If it doesn’t, check this step off.",
-        linkText: "Open the district clearance packet"
-      },
-      // SPANISH REVIEW: legal (district background check)
-      es: {
-        title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide",
-        when: "Después de recibir su correo de aceptación",
-        description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide. Si no los pide, marque este paso como terminado.",
-        linkText: "Abrir los formularios del distrito"
-      }
-    },
-    {
-      id: "orientation",
-      stage: "orientation",
-      link: "", // If orientation is online, add the link here
-      linkEs: "",
-      englishOnly: false,
-      en: {
-        title: "Attend New Volunteer Orientation",
-        when: "After you’re accepted. We’ll email you the date and details.",
-        description: "Learn what to expect as a mentor and how we keep students safe. We’ll also go over the Code of Conduct and your Big Interest Form with you.",
-        linkText: "Open the orientation"
-      },
-      es: {
-        title: "Asista a la orientación para voluntarios nuevos",
-        when: "Después de ser aceptado/a. Le enviaremos la fecha y los detalles por correo electrónico.",
-        description: "Aprenda qué esperar como mentor/a y cómo protegemos a los estudiantes. También repasaremos con usted el Código de Conducta y su formulario de interés (Big Interest Form).",
-        linkText: "Abrir la orientación"
-      }
-    },
-    {
-      id: "code-of-conduct",
-      stage: "orientation",
-      link: "COMING SOON", // TODO: Code of Conduct link
-      linkEs: "",
-      englishOnly: true,
-      en: {
-        title: "Sign the Code of Conduct",
-        when: "At or after orientation",
-        description: "The Code of Conduct explains how mentors keep students safe. Read it carefully before you sign, and ask us if anything is unclear.",
-        linkText: "Open the Code of Conduct"
-      },
-      // SPANISH REVIEW: legal (signature and consent)
-      es: {
-        title: "Firme el Código de Conducta",
-        when: "En la orientación o después",
-        description: "El Código de Conducta explica cómo los mentores protegen a los estudiantes. Léalo con cuidado antes de firmarlo y pregúntenos si algo no está claro.",
-        linkText: "Abrir el Código de Conducta"
-      }
-    },
-    {
-      id: "schedule",
-      stage: "launch-day",
-      link: "", // Optional: add site leader contact details or a link
-      linkEs: "",
-      englishOnly: false,
-      en: {
-        title: "Confirm your school and mentoring schedule",
-        when: "After orientation",
-        description: "We’ll confirm your school, the day and time of your sessions, and who to contact at the school.",
-        linkText: "See site details"
-      },
-      es: {
-        title: "Confirme su escuela y su horario de mentoría",
-        when: "Después de la orientación",
-        description: "Le confirmaremos su escuela, el día y la hora de sus sesiones y con quién comunicarse en la escuela.",
-        linkText: "Ver los detalles de la escuela"
-      }
-    },
-    {
-      id: "first-session",
-      stage: "launch-day",
-      link: "",
-      linkEs: "",
-      englishOnly: false,
-      en: {
-        title: "Go to your first mentoring session",
-        when: "As soon as possible after orientation",
-        description: "This is when you meet the student you’ll mentor, your Little. After that, BBBS staff will call you regularly to see how things are going.",
-        linkText: ""
-      },
-      es: {
-        title: "Vaya a su primera sesión de mentoría",
-        when: "Lo antes posible después de la orientación",
-        description: "Ahí conocerá al estudiante que va a acompañar como mentor/a: su Little. Después, el personal de BBBS le llamará con regularidad para saber cómo va todo.",
-        linkText: ""
-      }
-    }
-  ],
+  programs: [
 
-  /* --------------------------------------------------------------
-     COMMON QUESTIONS (shown above the contact section)
-     Copy a block to add a question. Delete all blocks to hide the section.
-     -------------------------------------------------------------- */
-  faq: [
+    /* ================================================================
+       LUNCH BUDDIES
+       ================================================================ */
     {
+      id: "lunch-buddies",
+      theme: "green",
+      draft: false,
       en: {
-        question: "What if I can’t make a mentoring session?",
-        answer: "Tell us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes."
+        name: "Lunch Buddies",
+        tagline: "Relationship-Centered Mentoring for Elementary Students",
+        summary: "Mentor an elementary student over lunch and help them build confidence and a sense of belonging at school.",
+        about: "Lunch Buddies is a site-based mentoring program that connects elementary students with caring mentors who offer encouragement, positive role modeling, and consistent support. Through regular mentoring sessions, students build confidence, strengthen social-emotional skills, and feel a stronger sense of belonging at school.",
+        highlightsHeading: "",
+        facts: { mentors: "Adults", mentees: "Elementary school students", when: "Twice a month at lunch, during the school day" }
       },
       es: {
-        question: "¿Qué pasa si no puedo ir a una sesión de mentoría?",
-        answer: "Avísenos en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario."
-      }
+        name: "Lunch Buddies",
+        tagline: "Mentoría centrada en las relaciones para estudiantes de primaria",
+        summary: "Sea mentor/a de un estudiante de primaria a la hora del almuerzo y ayúdele a ganar confianza y sentirse parte de su escuela.",
+        about: "Lunch Buddies es un programa de mentoría en las escuelas que une a estudiantes de primaria con mentores que les dan ánimo, un buen ejemplo y apoyo constante. En sesiones regulares, los estudiantes ganan confianza, fortalecen sus habilidades socioemocionales y sienten que forman parte de su comunidad escolar.",
+        highlightsHeading: "",
+        facts: { mentors: "Personas adultas", mentees: "Estudiantes de primaria", when: "Dos veces al mes a la hora del almuerzo, durante el día escolar" }
+      },
+      highlights: [
+        { icon: "people", en: "One-to-one mentoring with trained and screened mentors", es: "Mentoría individual con mentores capacitados y evaluados" },
+        { icon: "calendar", en: "Regular sessions during the school day in a safe, structured setting", es: "Sesiones regulares durante el día escolar, en un ambiente seguro y organizado" },
+        { icon: "chat", en: "Activities that build confidence, communication, and positive peer interaction", es: "Actividades que fomentan la confianza, la comunicación y la buena convivencia con los compañeros" },
+        { icon: "school", en: "Support that strengthens connection to school and overall well-being", es: "Apoyo que fortalece la conexión con la escuela y el bienestar general" }
+      ],
+      stages: [
+        { id: "application", en: { title: "Application", intro: "Tell us about yourself." }, es: { title: "Solicitud", intro: "Cuéntenos sobre usted." } },
+        { id: "interview", en: { title: "Interview", intro: "A short online meeting so we can get to know you." }, es: { title: "Entrevista", intro: "Una reunión breve en línea para conocerle." } },
+        {
+          id: "welcome",
+          en: { title: "Welcome", intro: "Within a week after your application and interview are both done, we’ll email you to let you know if you’re accepted. Accepted volunteers then finish these steps." },
+          // SPANISH REVIEW: legal (acceptance)
+          es: { title: "Bienvenida", intro: "A más tardar una semana después de que termine su solicitud y su entrevista, le enviaremos un correo electrónico para avisarle si fue aceptado/a. Las personas aceptadas completan después estos pasos." }
+        },
+        { id: "orientation", en: { title: "Orientation", intro: "Get ready to start mentoring." }, es: { title: "Orientación", intro: "Prepárese para empezar como mentor/a." } },
+        { id: "launch-day", en: { title: "Launch Day", intro: "Meet your Little and start mentoring." }, es: { title: "Día de inicio (Launch Day)", intro: "Conozca a su Little (su estudiante) y empiece la mentoría." } }
+      ],
+      steps: [
+        {
+          id: "application", stage: "application",
+          link: "https://bbbs.tfaforms.net/5007784", linkEs: "", englishOnly: true,
+          en: { title: "Complete the volunteer application", when: "", description: "Tell us about yourself. The application also includes the BBBS Code of Conduct, so read it carefully.", linkText: "Open the application" },
+          // SPANISH REVIEW: legal (Code of Conduct)
+          es: { title: "Complete la solicitud de voluntario/a", when: "", description: "Cuéntenos sobre usted. La solicitud también incluye el Código de Conducta de BBBS, así que léalo con cuidado.", linkText: "Abrir la solicitud" }
+        },
+        {
+          id: "interview", stage: "interview",
+          // Marco Ramos's public Microsoft Bookings page. If the interviewer changes, replace this link.
+          link: "https://bookings.cloud.microsoft/bookwithme/user/156962517c494942b4e8305270af8ed2@bbbs-sac.org/meetingtype/cerTDQhhNkibRiy_8GZk5Q2?anonymous&ismsaljsauthenabled&ep=mcard",
+          linkEs: "", englishOnly: true,
+          en: { title: "Book and do your 15-minute virtual interview", when: "Right after you submit your application", description: "Pick a time that works for you. The interview is a short, friendly online meeting so we can get to know you and answer your questions.", linkText: "Book your interview" },
+          es: { title: "Programe y haga su entrevista virtual de 15 minutos", when: "Justo después de enviar su solicitud", description: "Escoja una hora que le convenga. La entrevista es una reunión en línea breve y amistosa para conocerle y responder sus preguntas.", linkText: "Programar su entrevista" }
+        },
+        {
+          id: "references", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Let your references know we’ll contact them", when: "", description: "We’ll reach out to the references you gave us. Let them know to expect a call or email from BBBS so they can reply quickly. We also check the state and federal sex offender registries and public records. You don’t need to do anything for those checks.", linkText: "" },
+          // SPANISH REVIEW: legal (registry and public records checks)
+          es: { title: "Avise a sus referencias que nos comunicaremos con ellas", when: "", description: "Nos comunicaremos con las referencias que nos dio. Avíseles que recibirán una llamada o un correo electrónico de BBBS para que puedan responder pronto. También revisamos los registros estatales y federales de delincuentes sexuales y los registros públicos. Usted no tiene que hacer nada para esas revisiones.", linkText: "" }
+        },
+        {
+          id: "mandated-reporter", stage: "welcome",
+          link: "COMING SOON", // TODO: mandated reporter training link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          // SPANISH REVIEW: legal (mandated reporting)
+          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+        },
+        {
+          id: "live-scan", stage: "welcome",
+          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          linkEs: "", englishOnly: true,
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          // SPANISH REVIEW: legal (fingerprinting and background check)
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+        },
+        {
+          id: "tb-clearance", stage: "welcome",
+          link: "", linkEs: "", englishOnly: true,
+          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. We’ll need a copy of your clearance document.", linkText: "" },
+          // SPANISH REVIEW: legal (health requirement)
+          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Necesitaremos una copia de esa constancia.", linkText: "" }
+        },
+        {
+          id: "district-clearance", stage: "welcome",
+          link: "COMING SOON", // TODO: school district volunteer clearance packet link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it. If it doesn’t, check this step off.", linkText: "Open the district clearance packet" },
+          // SPANISH REVIEW: legal (district background check)
+          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide. Si no los pide, marque este paso como terminado.", linkText: "Abrir los formularios del distrito" }
+        },
+        {
+          id: "orientation", stage: "orientation",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Attend New Volunteer Orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a mentor and how we keep students safe.", linkText: "" },
+          es: { title: "Asista a la orientación para voluntarios nuevos", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como mentor/a y cómo protegemos a los estudiantes.", linkText: "" }
+        },
+        {
+          id: "schedule", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Confirm your school and lunch schedule", when: "", description: "We’ll confirm your school, the day and time of your lunch sessions, and who to contact at the school.", linkText: "" },
+          es: { title: "Confirme su escuela y su horario de almuerzo", when: "", description: "Le confirmaremos su escuela, el día y la hora de sus sesiones de almuerzo y con quién comunicarse en la escuela.", linkText: "" }
+        },
+        {
+          id: "first-session", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Go to your first Lunch Buddies session", when: "As soon as possible after orientation", description: "Meet the student you’ll mentor, your Little, over lunch. After that, BBBS staff will call you regularly to see how things are going.", linkText: "" },
+          es: { title: "Vaya a su primera sesión de Lunch Buddies", when: "Lo antes posible después de la orientación", description: "Conozca a la hora del almuerzo al estudiante que va a acompañar como mentor/a: su Little. Después, el personal de BBBS le llamará con regularidad para saber cómo va todo.", linkText: "" }
+        }
+      ],
+      faq: [
+        {
+          en: { question: "What if I can’t make a mentoring session?", answer: "Tell us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Avísenos en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
+        }
+      ]
+    },
+
+    /* ================================================================
+       LEVEL UP!   (draft: steps adapted from Lunch Buddies)
+       ================================================================ */
+    {
+      id: "level-up",
+      theme: "light",
+      draft: true,
+      en: {
+        name: "Level Up!",
+        tagline: "Targeted Mentoring for Student Engagement",
+        summary: "Mentor a middle or high school student one-to-one and help them stay on track with attendance, behavior and goals.",
+        about: "Level Up! is a one-to-one mentoring program for students who benefit from extra encouragement, accountability, and connection with trusted adults. Bigs help students build confidence, improve attendance, and feel more engaged at school.",
+        highlightsHeading: "",
+        facts: { mentors: "Adults", mentees: "Middle and high school students", when: "Twice a month during the school day" }
+      },
+      es: {
+        name: "Level Up!",
+        tagline: "Mentoría enfocada en el compromiso escolar",
+        summary: "Sea mentor/a individual de un estudiante de secundaria o preparatoria y ayúdele a mantenerse al día con su asistencia, su conducta y sus metas.",
+        about: "Level Up! es un programa de mentoría individual para estudiantes que se benefician de más ánimo, responsabilidad y conexión con adultos de confianza. Los mentores (Bigs) ayudan a los estudiantes a ganar confianza, mejorar su asistencia y participar más en la escuela.",
+        highlightsHeading: "",
+        facts: { mentors: "Personas adultas", mentees: "Estudiantes de secundaria y preparatoria", when: "Dos veces al mes durante el día escolar" }
+      },
+      highlights: [
+        { icon: "calendar", en: "Twice-a-month mentoring sessions with trained adult mentors", es: "Sesiones de mentoría dos veces al mes con mentores adultos capacitados" },
+        { icon: "target", en: "A focus on attendance, behavior, and goal setting", es: "Enfoque en la asistencia, la conducta y las metas" },
+        { icon: "heart", en: "Relationship-centered support", es: "Apoyo centrado en las relaciones" },
+        { icon: "loop", en: "Works alongside restorative practices and student support services", es: "Trabaja en conjunto con las prácticas restaurativas y los servicios de apoyo estudiantil" },
+        { icon: "cap", en: "College readiness and workforce development", es: "Preparación para la universidad y el mundo laboral" }
+      ],
+      stages: [
+        { id: "application", en: { title: "Application", intro: "Tell us about yourself." }, es: { title: "Solicitud", intro: "Cuéntenos sobre usted." } },
+        { id: "interview", en: { title: "Interview", intro: "A short online meeting so we can get to know you." }, es: { title: "Entrevista", intro: "Una reunión breve en línea para conocerle." } },
+        {
+          id: "welcome",
+          en: { title: "Welcome", intro: "Within a week after your application and interview are both done, we’ll email you to let you know if you’re accepted. Accepted volunteers then finish these steps." },
+          // SPANISH REVIEW: legal (acceptance)
+          es: { title: "Bienvenida", intro: "A más tardar una semana después de que termine su solicitud y su entrevista, le enviaremos un correo electrónico para avisarle si fue aceptado/a. Las personas aceptadas completan después estos pasos." }
+        },
+        { id: "orientation", en: { title: "Orientation", intro: "Get ready to start mentoring." }, es: { title: "Orientación", intro: "Prepárese para empezar como mentor/a." } },
+        { id: "launch-day", en: { title: "Launch Day", intro: "Meet your Little and start mentoring." }, es: { title: "Día de inicio (Launch Day)", intro: "Conozca a su Little (su estudiante) y empiece la mentoría." } }
+      ],
+      steps: [
+        {
+          id: "application", stage: "application",
+          link: "https://bbbs.tfaforms.net/5007784", // Same form as the QR code on the Level Up! flyer
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete the volunteer application", when: "", description: "Tell us about yourself. The application also includes the BBBS Code of Conduct, so read it carefully.", linkText: "Open the application" },
+          // SPANISH REVIEW: legal (Code of Conduct)
+          es: { title: "Complete la solicitud de voluntario/a", when: "", description: "Cuéntenos sobre usted. La solicitud también incluye el Código de Conducta de BBBS, así que léalo con cuidado.", linkText: "Abrir la solicitud" }
+        },
+        {
+          id: "interview", stage: "interview",
+          link: "https://bookings.cloud.microsoft/bookwithme/user/156962517c494942b4e8305270af8ed2@bbbs-sac.org/meetingtype/cerTDQhhNkibRiy_8GZk5Q2?anonymous&ismsaljsauthenabled&ep=mcard",
+          linkEs: "", englishOnly: true,
+          en: { title: "Book and do your 15-minute virtual interview", when: "Right after you submit your application", description: "Pick a time that works for you. The interview is a short, friendly online meeting so we can get to know you and answer your questions.", linkText: "Book your interview" },
+          es: { title: "Programe y haga su entrevista virtual de 15 minutos", when: "Justo después de enviar su solicitud", description: "Escoja una hora que le convenga. La entrevista es una reunión en línea breve y amistosa para conocerle y responder sus preguntas.", linkText: "Programar su entrevista" }
+        },
+        {
+          id: "references", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Let your references know we’ll contact them", when: "", description: "We’ll reach out to the references you gave us. Let them know to expect a call or email from BBBS so they can reply quickly. We also check the state and federal sex offender registries and public records. You don’t need to do anything for those checks.", linkText: "" },
+          // SPANISH REVIEW: legal (registry and public records checks)
+          es: { title: "Avise a sus referencias que nos comunicaremos con ellas", when: "", description: "Nos comunicaremos con las referencias que nos dio. Avíseles que recibirán una llamada o un correo electrónico de BBBS para que puedan responder pronto. También revisamos los registros estatales y federales de delincuentes sexuales y los registros públicos. Usted no tiene que hacer nada para esas revisiones.", linkText: "" }
+        },
+        {
+          id: "mandated-reporter", stage: "welcome",
+          link: "COMING SOON", // TODO: mandated reporter training link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          // SPANISH REVIEW: legal (mandated reporting)
+          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+        },
+        {
+          id: "live-scan", stage: "welcome",
+          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          linkEs: "", englishOnly: true,
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          // SPANISH REVIEW: legal (fingerprinting and background check)
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+        },
+        {
+          id: "tb-clearance", stage: "welcome",
+          link: "", linkEs: "", englishOnly: true,
+          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. We’ll need a copy of your clearance document.", linkText: "" },
+          // SPANISH REVIEW: legal (health requirement)
+          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Necesitaremos una copia de esa constancia.", linkText: "" }
+        },
+        {
+          id: "district-clearance", stage: "welcome",
+          link: "COMING SOON", // TODO: school district volunteer clearance packet link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it. If it doesn’t, check this step off.", linkText: "Open the district clearance packet" },
+          // SPANISH REVIEW: legal (district background check)
+          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide. Si no los pide, marque este paso como terminado.", linkText: "Abrir los formularios del distrito" }
+        },
+        {
+          id: "orientation", stage: "orientation",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Attend New Volunteer Orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a mentor and how we keep students safe.", linkText: "" },
+          es: { title: "Asista a la orientación para voluntarios nuevos", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como mentor/a y cómo protegemos a los estudiantes.", linkText: "" }
+        },
+        {
+          id: "schedule", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Confirm your school and mentoring schedule", when: "", description: "We’ll confirm your school, the day and time of your sessions, and who to contact at the school.", linkText: "" },
+          es: { title: "Confirme su escuela y su horario de mentoría", when: "", description: "Le confirmaremos su escuela, el día y la hora de sus sesiones y con quién comunicarse en la escuela.", linkText: "" }
+        },
+        {
+          id: "first-session", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Meet your Little", when: "As soon as possible after orientation", description: "Meet the student you’ll mentor, your Little. You’ll meet twice a month during the school day, and BBBS staff will check in with you regularly.", linkText: "" },
+          es: { title: "Conozca a su Little", when: "Lo antes posible después de la orientación", description: "Conozca al estudiante que va a acompañar como mentor/a: su Little. Se reunirán dos veces al mes durante el día escolar, y el personal de BBBS se comunicará con usted con regularidad.", linkText: "" }
+        }
+      ],
+      faq: [
+        {
+          en: { question: "What if I can’t make a mentoring session?", answer: "Tell us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Avísenos en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
+        }
+      ]
+    },
+
+    /* ================================================================
+       BIG FUTURES   (draft: steps need staff review)
+       ================================================================ */
+    {
+      id: "big-futures",
+      theme: "forest",
+      draft: true,
+      en: {
+        name: "Big Futures",
+        tagline: "Post-secondary and Workforce Readiness",
+        summary: "Share your career experience and help high school students plan for college, training and work after graduation.",
+        about: "Big Futures helps high school students prepare for life after graduation through mentoring, career exploration, and planning for college or training. The program connects students to a national network of mentors and resources for college and career pathways.",
+        highlightsHeading: "",
+        facts: { mentors: "Working professionals, often through a partner company", mentees: "High school students", when: "Monthly group sessions led by BBBS staff" }
+      },
+      es: {
+        name: "Big Futures",
+        tagline: "Preparación para estudios superiores y el mundo laboral",
+        summary: "Comparta su experiencia profesional y ayude a estudiantes de preparatoria a planear sus estudios, su capacitación y su trabajo después de graduarse.",
+        about: "Big Futures ayuda a estudiantes de preparatoria a prepararse para la vida después de graduarse, con mentoría, exploración de carreras y planes para la universidad o una capacitación. El programa conecta a los estudiantes con una red nacional de mentores y recursos para su camino universitario y profesional.",
+        highlightsHeading: "",
+        facts: { mentors: "Profesionales, muchas veces a través de una empresa aliada", mentees: "Estudiantes de preparatoria", when: "Sesiones grupales una vez al mes, dirigidas por el personal de BBBS" }
+      },
+      highlights: [
+        { icon: "briefcase", en: "Career exploration and workforce development", es: "Exploración de carreras y desarrollo laboral" },
+        { icon: "compass", en: "Support planning for college and other education after high school", es: "Apoyo para planear la universidad y otros estudios después de la preparatoria" },
+        { icon: "award", en: "Access to internships, scholarships, and national BBBS resources", es: "Acceso a prácticas profesionales, becas y recursos nacionales de BBBS" },
+        { icon: "people", en: "Guidance from trusted mentors and professional role models", es: "Orientación de mentores de confianza y modelos profesionales a seguir" }
+      ],
+      stages: [
+        { id: "application", en: { title: "Application", intro: "Tell us about yourself." }, es: { title: "Solicitud", intro: "Cuéntenos sobre usted." } },
+        { id: "interview", en: { title: "Interview", intro: "A short conversation so we can get to know you." }, es: { title: "Entrevista", intro: "Una conversación breve para conocerle." } },
+        {
+          id: "welcome",
+          en: { title: "Welcome", intro: "We’ll email you to let you know if you’re accepted. Accepted mentors then finish these steps." },
+          // SPANISH REVIEW: legal (acceptance)
+          es: { title: "Bienvenida", intro: "Le enviaremos un correo electrónico para avisarle si fue aceptado/a. Las personas aceptadas completan después estos pasos." }
+        },
+        { id: "orientation", en: { title: "Orientation", intro: "Get ready for your first session." }, es: { title: "Orientación", intro: "Prepárese para su primera sesión." } },
+        { id: "launch-day", en: { title: "Launch Day", intro: "Start meeting with students." }, es: { title: "Día de inicio (Launch Day)", intro: "Empiece a reunirse con los estudiantes." } }
+      ],
+      steps: [
+        {
+          id: "application", stage: "application",
+          link: "COMING SOON", // TODO: confirm which application Big Futures mentors use
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete the Big Futures application", when: "", description: "Tell us about yourself. If you’re joining through your workplace, your company contact may share the link with you. The application also includes the BBBS Code of Conduct.", linkText: "Open the application" },
+          // SPANISH REVIEW: legal (Code of Conduct)
+          es: { title: "Complete la solicitud de Big Futures", when: "", description: "Cuéntenos sobre usted. Si participa a través de su trabajo, la persona de contacto de su empresa puede compartirle el enlace. La solicitud también incluye el Código de Conducta de BBBS.", linkText: "Abrir la solicitud" }
+        },
+        {
+          id: "interview", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Talk with BBBS staff", when: "After you submit your application", description: "We’ll email you to set up a short conversation so we can get to know you and answer your questions.", linkText: "" },
+          es: { title: "Hable con el personal de BBBS", when: "Después de enviar su solicitud", description: "Le enviaremos un correo electrónico para programar una conversación breve, para conocerle y responder sus preguntas.", linkText: "" }
+        },
+        {
+          id: "references", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Let your references know we’ll contact them", when: "", description: "We’ll reach out to the references you gave us. Let them know to expect a call or email from BBBS so they can reply quickly. We also check the state and federal sex offender registries and public records. You don’t need to do anything for those checks.", linkText: "" },
+          // SPANISH REVIEW: legal (registry and public records checks)
+          es: { title: "Avise a sus referencias que nos comunicaremos con ellas", when: "", description: "Nos comunicaremos con las referencias que nos dio. Avíseles que recibirán una llamada o un correo electrónico de BBBS para que puedan responder pronto. También revisamos los registros estatales y federales de delincuentes sexuales y los registros públicos. Usted no tiene que hacer nada para esas revisiones.", linkText: "" }
+        },
+        {
+          id: "mandated-reporter", stage: "welcome",
+          link: "COMING SOON", // TODO: mandated reporter training link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete mandated reporter training", when: "After you get your acceptance email", description: "This online training teaches you how to recognize and report suspected child abuse or neglect. Save a copy of your certificate when you finish.", linkText: "Open the training" },
+          // SPANISH REVIEW: legal (mandated reporting)
+          es: { title: "Complete la capacitación para reporteros obligatorios (mandated reporter)", when: "Después de recibir su correo de aceptación", description: "Esta capacitación en línea le enseña a reconocer y reportar posibles casos de abuso o negligencia infantil. Guarde una copia de su certificado cuando termine.", linkText: "Abrir la capacitación" }
+        },
+        {
+          id: "live-scan", stage: "welcome",
+          link: "COMING SOON", // TODO: Live Scan instructions or request form
+          linkEs: "", englishOnly: true,
+          en: { title: "Get fingerprinted with Live Scan", when: "", description: "Live Scan is a fingerprint background check. Every mentor needs one. Follow the instructions to find a Live Scan location, and bring a photo ID.", linkText: "Open the Live Scan instructions" },
+          // SPANISH REVIEW: legal (fingerprinting and background check)
+          es: { title: "Tómese las huellas digitales con Live Scan", when: "", description: "Live Scan es una verificación de antecedentes con huellas digitales. Todos los mentores la necesitan. Siga las instrucciones para encontrar un lugar de Live Scan y lleve una identificación con foto.", linkText: "Abrir las instrucciones de Live Scan" }
+        },
+        {
+          id: "site-requirements", stage: "welcome",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Complete any site requirements", when: "", description: "If your group sessions are held at a school, you may also need a TB clearance or school district paperwork. We’ll tell you what you need. If you don’t need anything, check this step off.", linkText: "" },
+          // SPANISH REVIEW: legal (health and district requirements)
+          es: { title: "Complete los requisitos del lugar, si hay", when: "", description: "Si sus sesiones grupales son en una escuela, es posible que también necesite una constancia de tuberculosis (TB) o formularios del distrito escolar. Le diremos qué necesita. Si no necesita nada, marque este paso como terminado.", linkText: "" }
+        },
+        {
+          id: "orientation", stage: "orientation",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Attend mentor orientation", when: "We’ll email you the date and details.", description: "Learn how Big Futures sessions work and how we keep students safe.", linkText: "" },
+          es: { title: "Asista a la orientación para mentores", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda cómo funcionan las sesiones de Big Futures y cómo protegemos a los estudiantes.", linkText: "" }
+        },
+        {
+          id: "schedule", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Get your session schedule", when: "", description: "We’ll tell you where and when your monthly group sessions happen.", linkText: "" },
+          es: { title: "Reciba su horario de sesiones", when: "", description: "Le diremos dónde y cuándo serán sus sesiones grupales mensuales.", linkText: "" }
+        },
+        {
+          id: "first-session", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Join your first Big Futures session", when: "", description: "BBBS staff lead each monthly session. You’ll share your experience and help high school students explore their next steps after graduation.", linkText: "" },
+          es: { title: "Participe en su primera sesión de Big Futures", when: "", description: "El personal de BBBS dirige cada sesión mensual. Usted compartirá su experiencia y ayudará a estudiantes de preparatoria a explorar sus próximos pasos después de graduarse.", linkText: "" }
+        }
+      ],
+      faq: [
+        {
+          en: { question: "What if I can’t make a session?", answer: "Tell us as soon as you know you’ll miss a session." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Avísenos en cuanto sepa que va a faltar a una sesión." }
+        }
+      ]
+    },
+
+    /* ================================================================
+       HIGH SCHOOL BIGS   (draft: steps need staff review)
+       ================================================================ */
+    {
+      id: "high-school-bigs",
+      theme: "charcoal",
+      draft: true,
+      en: {
+        name: "High School Bigs",
+        tagline: "Cross-Age Peer Mentoring",
+        summary: "For high school students: mentor an elementary student, build leadership skills and give back to your community.",
+        about: "High School Bigs is a cross-age mentoring program. High school students serve as positive role models (Bigs) and meet regularly with elementary school students (Littles) to build supportive, consistent relationships.",
+        highlightsHeading: "What you’ll gain as a Big",
+        facts: { mentors: "High school students", mentees: "Elementary school students", when: "Once a week after school, all school year" }
+      },
+      es: {
+        name: "High School Bigs",
+        tagline: "Mentoría entre estudiantes de distintas edades",
+        summary: "Para estudiantes de preparatoria: sea mentor/a de un estudiante de primaria, desarrolle su liderazgo y ayude a su comunidad.",
+        about: "High School Bigs es un programa de mentoría entre estudiantes de distintas edades. Estudiantes de preparatoria son ejemplos positivos (Bigs) y se reúnen con regularidad con estudiantes de primaria (Littles) para formar relaciones de apoyo constantes.",
+        highlightsHeading: "Lo que usted gana como Big",
+        facts: { mentors: "Estudiantes de preparatoria", mentees: "Estudiantes de primaria", when: "Una vez por semana después de clases, durante todo el año escolar" }
+      },
+      highlights: [
+        { icon: "star", en: "Leadership skills", es: "Habilidades de liderazgo" },
+        { icon: "clock", en: "Community service hours (if your school offers them)", es: "Horas de servicio comunitario (si su escuela las ofrece)" },
+        { icon: "award", en: "Scholarship opportunities", es: "Oportunidades de becas" },
+        { icon: "book", en: "Tutoring and mentoring experience", es: "Experiencia como tutor/a y mentor/a" },
+        { icon: "smile", en: "More self-confidence", es: "Más autoestima" },
+        { icon: "trend", en: "Better school attendance and grades", es: "Mejor asistencia y mejores calificaciones" },
+        { icon: "people", en: "A chance to join other BBBS activities", es: "Oportunidad de participar en otras actividades de BBBS" },
+        { icon: "heart", en: "Giving back to your community", es: "Ayudar a su comunidad" }
+      ],
+      stages: [
+        { id: "sign-up", en: { title: "Sign up", intro: "Tell us you want to be a Big." }, es: { title: "Inscripción", intro: "Díganos que quiere ser Big." } },
+        { id: "interview", en: { title: "Interview", intro: "A short, friendly conversation." }, es: { title: "Entrevista", intro: "Una conversación breve y amistosa." } },
+        { id: "training", en: { title: "Training", intro: "Learn how to be a great Big." }, es: { title: "Capacitación", intro: "Aprenda a ser un gran Big." } },
+        { id: "orientation", en: { title: "Orientation", intro: "Get ready to meet your Little." }, es: { title: "Orientación", intro: "Prepárese para conocer a su Little." } },
+        { id: "launch-day", en: { title: "Launch Day", intro: "Meet your Little and start mentoring." }, es: { title: "Día de inicio (Launch Day)", intro: "Conozca a su Little y empiece la mentoría." } }
+      ],
+      steps: [
+        {
+          id: "application", stage: "sign-up",
+          link: "COMING SOON", // TODO: High School Bigs application link
+          linkEs: "", englishOnly: true,
+          en: { title: "Complete the High School Bigs application", when: "", description: "Tell us about yourself and your school.", linkText: "Open the application" },
+          es: { title: "Complete la solicitud de High School Bigs", when: "", description: "Cuéntenos sobre usted y su escuela.", linkText: "Abrir la solicitud" }
+        },
+        {
+          id: "parent-permission", stage: "sign-up",
+          link: "COMING SOON", // TODO: parent or guardian permission form
+          linkEs: "", englishOnly: true,
+          en: { title: "Get permission from a parent or guardian", when: "If you’re under 18", description: "A parent or guardian needs to sign a permission form. If you’re 18 or older, check this step off.", linkText: "Open the permission form" },
+          // SPANISH REVIEW: legal (parent consent)
+          es: { title: "Pida permiso a su madre, padre o tutor/a", when: "Si tiene menos de 18 años", description: "Su madre, padre o tutor/a debe firmar un formulario de permiso. Si tiene 18 años o más, marque este paso como terminado.", linkText: "Abrir el formulario de permiso" }
+        },
+        {
+          id: "interview", stage: "interview",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Meet with BBBS staff", when: "", description: "We’ll email you to set up a short conversation so we can get to know you and answer your questions.", linkText: "" },
+          es: { title: "Reúnase con el personal de BBBS", when: "", description: "Le enviaremos un correo electrónico para programar una conversación breve, para conocerle y responder sus preguntas.", linkText: "" }
+        },
+        {
+          id: "big-training", stage: "training",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Complete your Big training", when: "", description: "Learn how to be a positive role model, plan fun activities, and keep Littles safe, including how to tell a trusted adult about any concerns.", linkText: "" },
+          // SPANISH REVIEW: legal (safety reporting)
+          es: { title: "Complete su capacitación como Big", when: "", description: "Aprenda a ser un ejemplo positivo, a planear actividades divertidas y a proteger a los Littles, incluyendo cómo avisar a un adulto de confianza si algo le preocupa.", linkText: "" }
+        },
+        {
+          id: "school-requirements", stage: "training",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Complete any school requirements", when: "", description: "Some schools need extra paperwork, like a TB clearance. We’ll tell you what your school needs. If it doesn’t need anything, check this step off.", linkText: "" },
+          // SPANISH REVIEW: legal (health and school requirements)
+          es: { title: "Complete los requisitos de la escuela, si hay", when: "", description: "Algunas escuelas piden formularios adicionales, como una constancia de tuberculosis (TB). Le diremos qué necesita su escuela. Si no necesita nada, marque este paso como terminado.", linkText: "" }
+        },
+        {
+          id: "orientation", stage: "orientation",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Attend orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a Big and how sessions with your Little work.", linkText: "" },
+          es: { title: "Asista a la orientación", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como Big y cómo funcionan las sesiones con su Little.", linkText: "" }
+        },
+        {
+          id: "schedule", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Get your school and schedule", when: "", description: "We’ll tell you which elementary school you’ll visit and your weekly after-school time.", linkText: "" },
+          es: { title: "Reciba su escuela y su horario", when: "", description: "Le diremos a qué escuela primaria irá y su horario semanal después de clases.", linkText: "" }
+        },
+        {
+          id: "first-session", stage: "launch-day",
+          link: "", linkEs: "", englishOnly: false,
+          en: { title: "Meet your Little", when: "", description: "You’ll meet once a week after school for group activities with your Little, all school year.", linkText: "" },
+          es: { title: "Conozca a su Little", when: "", description: "Se reunirán una vez por semana después de clases para hacer actividades en grupo con su Little, durante todo el año escolar.", linkText: "" }
+        }
+      ],
+      faq: [
+        {
+          en: { question: "Can I earn community service hours?", answer: "It depends on your school. Ask us and your school counselor what counts." },
+          es: { question: "¿Puedo ganar horas de servicio comunitario?", answer: "Depende de su escuela. Pregúntenos a nosotros y a su consejero/a escolar qué cuenta." }
+        },
+        {
+          en: { question: "What if I can’t make a session?", answer: "Tell us as soon as you know you’ll be absent, so we can plan for your Little." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Avísenos en cuanto sepa que va a faltar, para que podamos organizarnos con su Little." }
+        }
+      ]
     }
   ]
 };

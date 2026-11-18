@@ -8,16 +8,17 @@
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0a714e">
-  <title>Lunch Buddies Mentor Checklist | Big Brothers Big Sisters of the Greater Sacramento Area</title>
-  <meta name="description" content="Your step-by-step checklist for becoming a Lunch Buddies mentor with Big Brothers Big Sisters of the Greater Sacramento Area.">
+  <title>Site-Based Mentoring | Big Brothers Big Sisters of the Greater Sacramento Area</title>
+  <meta name="description" content="Find the Big Brothers Big Sisters site-based mentoring program that fits you, then follow your step-by-step checklist.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a714e'/%3E%3Cpath d='M9 16.5l4.5 4.5 9.5-10' fill='none' stroke='%2300fb87' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=2">
-  <!-- steps.js holds all the words. app.js builds the page from it. -->
-  <script src="steps.js?v=2" defer></script>
-  <script src="app.js?v=2" defer></script>
+  <!-- After changing styles.css, steps.js or app.js, raise these ?v= numbers so visitors get the new files. -->
+  <link rel="stylesheet" href="styles.css?v=3">
+  <!-- steps.js holds all the words. app.js builds the pages from it. -->
+  <script src="steps.js?v=3" defer></script>
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#checklist" data-ui="skipLink">Skip to the checklist</a>
+  <a class="skip-link" href="#main" data-ui="skipLink">Skip to main content</a>
 
   <header class="site-header">
     <div class="logo-bar">
@@ -26,63 +27,34 @@
       </div>
     </div>
 
-    <div class="hero">
+    <div class="hero theme-green" id="hero">
       <div class="wrap">
         <div class="hero-top">
+          <a class="back-link" id="back-link" href="./" hidden>
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-ui="backLink">All programs</span>
+          </a>
           <div class="lang-toggle" role="group" aria-label="Language / Idioma">
             <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
             <button type="button" data-lang="es" lang="es" aria-pressed="false">Español</button>
           </div>
         </div>
-        <p class="eyebrow" data-ui="eyebrow">Become a mentor</p>
-        <h1 class="program-name" data-ui="pageTitle">Lunch Buddies</h1>
-        <p class="program-pill"><span data-ui="programTagline">Relationship-Centered Mentoring for Elementary Students</span></p>
-        <p class="tagline" data-ui="tagline"></p>
-        <p class="hero-action">
-          <a class="button-start" href="#checklist">
-            <span data-ui="startButton">See the steps</span>
-            <svg class="icon-down" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M8 2.5v10M3.5 8 8 12.5 12.5 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </p>
+        <p class="eyebrow" id="hero-eyebrow">Site-based mentoring</p>
+        <h1 class="hero-title" id="hero-title">Become a Big</h1>
+        <p class="hero-pill"><span id="hero-pill">Mentor a student at school</span></p>
+        <p class="tagline" id="hero-tagline"></p>
+        <p class="hero-actions" id="hero-actions"></p>
       </div>
     </div>
 
     <div class="pattern-band" aria-hidden="true"></div>
   </header>
 
-  <main id="main">
-    <section class="about" aria-labelledby="about-heading">
-      <div class="wrap">
-        <h2 id="about-heading" data-ui="aboutHeading">What is Lunch Buddies?</h2>
-        <p class="about-text" data-ui="aboutText"></p>
-        <ul class="highlights" id="highlights" role="list"></ul>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <h2 class="checklist-heading" data-ui="checklistHeading">Your checklist</h2>
-      <div class="intro">
-        <p data-ui="introText"></p>
-        <p class="privacy-note" data-ui="privacyNote"></p>
-      </div>
-
-      <div class="progress-panel">
-        <p class="progress-text" id="progress-text" role="status"></p>
-        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
-        <p class="storage-warning" id="storage-warning" data-ui="storageWarning" hidden></p>
-        <button type="button" class="button-secondary" id="reset-button" data-ui="resetButton">Reset my progress</button>
-      </div>
-
-      <div id="checklist" class="checklist" tabindex="-1">
-        <noscript>
-          <p class="noscript">This checklist needs JavaScript turned on. / Esta lista necesita que JavaScript esté activado.</p>
-        </noscript>
-      </div>
-
-      <section class="faq" id="faq" aria-labelledby="faq-heading" hidden>
-        <h2 id="faq-heading" data-ui="faqHeading">Common questions</h2>
-        <div id="faq-list"></div>
-      </section>
+  <main id="main" tabindex="-1">
+    <div id="view">
+      <noscript>
+        <div class="wrap"><p class="noscript">This site needs JavaScript turned on. / Este sitio necesita que JavaScript esté activado.</p></div>
+      </noscript>
     </div>
 
     <div class="pattern-band contact-band" aria-hidden="true"></div>
