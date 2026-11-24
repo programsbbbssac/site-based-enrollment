@@ -65,6 +65,10 @@ link: "https://bbbs.tfaforms.net/1234567",
 - If a Spanish version of the form exists, put it in `linkEs`. Spanish readers will get that one instead.
 - `englishOnly: true` tells Spanish readers the form is only in English. Change it to `false` once a Spanish version exists.
 
+### Contact details and "haven't heard from us" notes
+
+The email and Dialpad number are set once, in `contact` at the top of `steps.js`, and used everywhere: the contact block, the "Not sure, or haven't heard from us yet? Text, call, or email" note, and the draft-program note. Steps that wait on BBBS (district clearance, orientation, schedules) have `askUs: true`, which shows that note. Email addresses typed into step text become clickable automatically.
+
 ### Draft programs
 
 Level Up!, Big Futures and High School Bigs have `draft: true`. Their steps were drafted from the Lunch Buddies process and the flyers, and their pages show a note asking people to email us before they start. When staff confirm a program's steps, change it to `draft: false`.
@@ -121,7 +125,6 @@ Already on. For reference: **Settings → Pages**, Source **Deploy from a branch
 - [ ] Steps for Level Up!, Big Futures and High School Bigs confirmed, then `draft: false`
 - [ ] Interview booking link: confirm it's fine to keep it public, or use a shared team booking page
 - [ ] Spanish text reviewed by bilingual staff (Marco)
-- [ ] Contact phone number added, or left empty on purpose
 - [ ] Brand colors approved
 - [ ] Tested on an iPhone and an Android phone, in both languages
 - [ ] Tested with a screen reader (VoiceOver on iPhone or TalkBack on Android)

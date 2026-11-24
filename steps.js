@@ -51,7 +51,8 @@ window.SITE_CONTENT = {
      -------------------------------------------------------------- */
   contact: {
     email: "programs@bbbs-sac.org",
-    phone: "" // Optional: add a phone number, e.g. "(916) 555-0100"
+    phone: "(916) 314-2980",   // Dialpad. Leave "" to hide it.
+    textPreferred: true         // true = ask people to text first, then call
   },
 
   /* --------------------------------------------------------------
@@ -103,7 +104,7 @@ window.SITE_CONTENT = {
       startButton: "See the steps",
       aboutHeading: "About {program}",
       checklistHeading: "Your checklist",
-      draftNotice: "We’re still finalizing the steps for this program. Email us before you start.",
+      draftNotice: "We’re still finalizing the steps for this program. Text or email us before you start.",
       introText: "Follow these steps in order. Each step opens after you check off the one before it.",
       privacyNote: "This site does not collect your information. Your checkmarks are saved only in this browser on this device. BBBS staff keep your official record.",
       progress: "{done} of {total} steps done",
@@ -118,16 +119,21 @@ window.SITE_CONTENT = {
       lockedDoneNote: "To change this step, uncheck the steps after it first.",
       whenLabel: "When:",
       newTab: "(opens in a new tab)",
-      comingSoon: "Link coming soon. If you need it now, contact us below.",
+      comingSoon: "Link coming soon.",
+      askUs: "Not sure, or haven’t heard from us yet? {text} (preferred), {call}, or {email}.",
+      askUsText: "Text {phone}",
+      askUsCall: "call",
+      askUsEmail: "email {email}",
       englishOnly: "",
       stageDone: "Stage complete",
       faqHeading: "Common questions",
 
       // Contact and footer
       contactHeading: "Want more info?",
-      contactIntro: "We’re happy to help with any step. You can also reply to any email from us.",
+      contactIntro: "We’re happy to help with any step. Text us (preferred), call, or email. You can also reply to any email from us.",
       emailLabel: "Email",
-      phoneLabel: "Phone",
+      textLabel: "Text (preferred)",
+      phoneLabel: "Call",
       footer: "Big Brothers Big Sisters of the Greater Sacramento Area. This site does not collect or store your information.",
       loadError: "This page could not load. Please try again later, or email us for help."
     },
@@ -173,7 +179,7 @@ window.SITE_CONTENT = {
       startButton: "Ver los pasos",
       aboutHeading: "Acerca de {program}",
       checklistHeading: "Su lista de pasos",
-      draftNotice: "Todavía estamos terminando los pasos de este programa. Escríbanos antes de empezar.",
+      draftNotice: "Todavía estamos terminando los pasos de este programa. Envíenos un mensaje de texto o un correo electrónico antes de empezar.",
       introText: "Siga estos pasos en orden. Cada paso se abre cuando marca como terminado el paso anterior.",
       privacyNote: "Este sitio no recopila su información. Sus marcas se guardan solo en este navegador, en este dispositivo. El personal de BBBS guarda su expediente oficial.",
       progress: "{done} de {total} pasos terminados",
@@ -188,15 +194,20 @@ window.SITE_CONTENT = {
       lockedDoneNote: "Para cambiar este paso, primero quite la marca de los pasos que siguen.",
       whenLabel: "Cuándo:",
       newTab: "(se abre en una pestaña nueva)",
-      comingSoon: "El enlace estará disponible pronto. Si lo necesita ahora, comuníquese con nosotros (vea abajo).",
+      comingSoon: "El enlace estará disponible pronto.",
+      askUs: "¿Tiene dudas o todavía no ha recibido nada de nosotros? {text} (de preferencia), {call} o {email}.",
+      askUsText: "Envíe un mensaje de texto al {phone}",
+      askUsCall: "llame",
+      askUsEmail: "escriba a {email}",
       englishOnly: "Por ahora, la página de este enlace está solo en inglés. Si necesita ayuda, comuníquese con nosotros.",
       stageDone: "Etapa terminada",
       faqHeading: "Preguntas frecuentes",
 
       contactHeading: "¿Quiere más información?",
-      contactIntro: "Con gusto le ayudamos con cualquier paso. También puede responder a cualquier correo electrónico que le enviemos.",
+      contactIntro: "Con gusto le ayudamos con cualquier paso. Envíenos un mensaje de texto (de preferencia), llámenos o escríbanos. También puede responder a cualquier correo electrónico que le enviemos.",
       emailLabel: "Correo electrónico",
-      phoneLabel: "Teléfono",
+      textLabel: "Mensaje de texto (de preferencia)",
+      phoneLabel: "Llamada",
       footer: "Big Brothers Big Sisters of the Greater Sacramento Area. Este sitio no recopila ni guarda su información.",
       loadError: "No se pudo cargar esta página. Intente más tarde o escríbanos para pedir ayuda."
     }
@@ -282,6 +293,9 @@ window.SITE_CONTENT = {
                  English only.
                  details: optional list of short instructions, shown as
                  bullet points under the description.
+                 askUs: true adds "Not sure, or haven't heard from us yet?
+                 Text, call, or email" with the contact details above.
+                 Steps marked "COMING SOON" show it automatically.
      faq         Common questions for that program.
      -------------------------------------------------------------- */
   programs: [
@@ -352,7 +366,7 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "https://mandatedreportertraining.com/volunteers/",
+          link: "https://register.mandatedreportertraining.com/join-org/a4e7eee3-f4c3-f011-8195-0022480481e1-17398", // BBBS organization registration link
           linkEs: "", englishOnly: true,
           en: {
             title: "Complete mandated reporter training", when: "After you get your acceptance email",
@@ -362,7 +376,7 @@ window.SITE_CONTENT = {
               "Confirm your email, then open the training.",
               "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
               "You can pause and come back to finish later.",
-              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "Finish the assessment at the end, then email a screenshot of the completed page to programs@bbbs-sac.org.",
               "You don’t need to pay for a certificate, unless you want one for your records."
             ],
             linkText: "Open the training"
@@ -376,7 +390,7 @@ window.SITE_CONTENT = {
               "Confirme su correo electrónico y después abra la capacitación.",
               "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
               "Puede pausarla y volver después para terminarla.",
-              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "Al final, complete la evaluación y envíe una captura de pantalla de la página que muestra que la terminó a programs@bbbs-sac.org.",
               "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
             ],
             linkText: "Abrir la capacitación"
@@ -393,27 +407,26 @@ window.SITE_CONTENT = {
         {
           id: "tb-clearance", stage: "welcome",
           link: "", linkEs: "", englishOnly: true,
-          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. We’ll need a copy of your clearance document.", linkText: "" },
+          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. Email your proof of clearance to programs@bbbs-sac.org.", linkText: "" },
           // SPANISH REVIEW: legal (health requirement)
-          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Necesitaremos una copia de esa constancia.", linkText: "" }
+          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Envíe su comprobante por correo electrónico a programs@bbbs-sac.org.", linkText: "" }
         },
         {
           id: "district-clearance", stage: "welcome",
-          link: "COMING SOON", // TODO: school district volunteer clearance packet link
-          linkEs: "", englishOnly: true,
-          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it. If it doesn’t, check this step off.", linkText: "Open the district clearance packet" },
+          link: "", linkEs: "", englishOnly: true, askUs: true,
+          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it and send you what to fill out. If it doesn’t, check this step off.", linkText: "" },
           // SPANISH REVIEW: legal (district background check)
-          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide. Si no los pide, marque este paso como terminado.", linkText: "Abrir los formularios del distrito" }
+          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide y le enviaremos lo que debe llenar. Si no los pide, marque este paso como terminado.", linkText: "" }
         },
         {
           id: "orientation", stage: "orientation",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Attend New Volunteer Orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a mentor and how we keep students safe.", linkText: "" },
           es: { title: "Asista a la orientación para voluntarios nuevos", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como mentor/a y cómo protegemos a los estudiantes.", linkText: "" }
         },
         {
           id: "schedule", stage: "launch-day",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Confirm your school and lunch schedule", when: "", description: "We’ll confirm your school, the day and time of your lunch sessions, and who to contact at the school.", linkText: "" },
           es: { title: "Confirme su escuela y su horario de almuerzo", when: "", description: "Le confirmaremos su escuela, el día y la hora de sus sesiones de almuerzo y con quién comunicarse en la escuela.", linkText: "" }
         },
@@ -426,8 +439,8 @@ window.SITE_CONTENT = {
       ],
       faq: [
         {
-          en: { question: "What if I can’t make a mentoring session?", answer: "Tell us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
-          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Avísenos en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
+          en: { question: "What if I can’t make a mentoring session?", answer: "Text or email us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Envíenos un mensaje de texto o un correo electrónico en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
         }
       ]
     },
@@ -499,7 +512,7 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "https://mandatedreportertraining.com/volunteers/",
+          link: "https://register.mandatedreportertraining.com/join-org/a4e7eee3-f4c3-f011-8195-0022480481e1-17398", // BBBS organization registration link
           linkEs: "", englishOnly: true,
           en: {
             title: "Complete mandated reporter training", when: "After you get your acceptance email",
@@ -509,7 +522,7 @@ window.SITE_CONTENT = {
               "Confirm your email, then open the training.",
               "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
               "You can pause and come back to finish later.",
-              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "Finish the assessment at the end, then email a screenshot of the completed page to programs@bbbs-sac.org.",
               "You don’t need to pay for a certificate, unless you want one for your records."
             ],
             linkText: "Open the training"
@@ -523,7 +536,7 @@ window.SITE_CONTENT = {
               "Confirme su correo electrónico y después abra la capacitación.",
               "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
               "Puede pausarla y volver después para terminarla.",
-              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "Al final, complete la evaluación y envíe una captura de pantalla de la página que muestra que la terminó a programs@bbbs-sac.org.",
               "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
             ],
             linkText: "Abrir la capacitación"
@@ -540,27 +553,26 @@ window.SITE_CONTENT = {
         {
           id: "tb-clearance", stage: "welcome",
           link: "", linkEs: "", englishOnly: true,
-          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. We’ll need a copy of your clearance document.", linkText: "" },
+          en: { title: "Get your TB clearance", when: "", description: "School volunteers need a tuberculosis (TB) clearance. You can get one from your doctor or a local clinic. Email your proof of clearance to programs@bbbs-sac.org.", linkText: "" },
           // SPANISH REVIEW: legal (health requirement)
-          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Necesitaremos una copia de esa constancia.", linkText: "" }
+          es: { title: "Obtenga su constancia de tuberculosis (TB clearance)", when: "", description: "Las personas voluntarias en las escuelas necesitan una constancia de tuberculosis (TB). Puede obtenerla con su médico o en una clínica. Envíe su comprobante por correo electrónico a programs@bbbs-sac.org.", linkText: "" }
         },
         {
           id: "district-clearance", stage: "welcome",
-          link: "COMING SOON", // TODO: school district volunteer clearance packet link
-          linkEs: "", englishOnly: true,
-          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it. If it doesn’t, check this step off.", linkText: "Open the district clearance packet" },
+          link: "", linkEs: "", englishOnly: true, askUs: true,
+          en: { title: "Complete the school district volunteer clearance, if your school needs it", when: "", description: "Some school districts have their own volunteer paperwork and background check. We’ll tell you if your school needs it and send you what to fill out. If it doesn’t, check this step off.", linkText: "" },
           // SPANISH REVIEW: legal (district background check)
-          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide. Si no los pide, marque este paso como terminado.", linkText: "Abrir los formularios del distrito" }
+          es: { title: "Complete la autorización para voluntarios del distrito escolar, si su escuela la pide", when: "", description: "Algunos distritos escolares tienen sus propios formularios y su propia verificación de antecedentes para voluntarios. Le diremos si su escuela los pide y le enviaremos lo que debe llenar. Si no los pide, marque este paso como terminado.", linkText: "" }
         },
         {
           id: "orientation", stage: "orientation",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Attend New Volunteer Orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a mentor and how we keep students safe.", linkText: "" },
           es: { title: "Asista a la orientación para voluntarios nuevos", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como mentor/a y cómo protegemos a los estudiantes.", linkText: "" }
         },
         {
           id: "schedule", stage: "launch-day",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Confirm your school and mentoring schedule", when: "", description: "We’ll confirm your school, the day and time of your sessions, and who to contact at the school.", linkText: "" },
           es: { title: "Confirme su escuela y su horario de mentoría", when: "", description: "Le confirmaremos su escuela, el día y la hora de sus sesiones y con quién comunicarse en la escuela.", linkText: "" }
         },
@@ -573,8 +585,8 @@ window.SITE_CONTENT = {
       ],
       faq: [
         {
-          en: { question: "What if I can’t make a mentoring session?", answer: "Tell us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
-          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Avísenos en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
+          en: { question: "What if I can’t make a mentoring session?", answer: "Text or email us as soon as you know you’ll be absent. On mentoring days, BBBS staff work directly with the school and will let you know if your student is absent or the schedule changes." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión de mentoría?", answer: "Envíenos un mensaje de texto o un correo electrónico en cuanto sepa que va a faltar. Los días de mentoría, el personal de BBBS coordina directamente con la escuela y le avisará si su estudiante falta o si cambia el horario." }
         }
       ]
     },
@@ -646,7 +658,7 @@ window.SITE_CONTENT = {
         },
         {
           id: "mandated-reporter", stage: "welcome",
-          link: "https://mandatedreportertraining.com/volunteers/",
+          link: "https://register.mandatedreportertraining.com/join-org/a4e7eee3-f4c3-f011-8195-0022480481e1-17398", // BBBS organization registration link
           linkEs: "", englishOnly: true,
           en: {
             title: "Complete mandated reporter training", when: "After you get your acceptance email",
@@ -656,7 +668,7 @@ window.SITE_CONTENT = {
               "Confirm your email, then open the training.",
               "Choose the Big Brothers Big Sisters training, not the general volunteer one.",
               "You can pause and come back to finish later.",
-              "Finish the assessment at the end, then send us a screenshot of the completed page.",
+              "Finish the assessment at the end, then email a screenshot of the completed page to programs@bbbs-sac.org.",
               "You don’t need to pay for a certificate, unless you want one for your records."
             ],
             linkText: "Open the training"
@@ -670,7 +682,7 @@ window.SITE_CONTENT = {
               "Confirme su correo electrónico y después abra la capacitación.",
               "Escoja la capacitación de Big Brothers Big Sisters, no la de voluntarios en general.",
               "Puede pausarla y volver después para terminarla.",
-              "Al final, complete la evaluación y envíenos una captura de pantalla de la página que muestra que la terminó.",
+              "Al final, complete la evaluación y envíe una captura de pantalla de la página que muestra que la terminó a programs@bbbs-sac.org.",
               "No tiene que pagar por un certificado, a menos que quiera uno para sus registros."
             ],
             linkText: "Abrir la capacitación"
@@ -686,20 +698,20 @@ window.SITE_CONTENT = {
         },
         {
           id: "site-requirements", stage: "welcome",
-          link: "", linkEs: "", englishOnly: false,
-          en: { title: "Complete any site requirements", when: "", description: "If your group sessions are held at a school, you may also need a TB clearance or school district paperwork. We’ll tell you what you need. If you don’t need anything, check this step off.", linkText: "" },
+          link: "", linkEs: "", englishOnly: false, askUs: true,
+          en: { title: "Complete any site requirements", when: "", description: "If your group sessions are held at a school, you may also need a TB clearance or school district paperwork. We’ll tell you what you need. Email any proof of clearance to programs@bbbs-sac.org. If you don’t need anything, check this step off.", linkText: "" },
           // SPANISH REVIEW: legal (health and district requirements)
-          es: { title: "Complete los requisitos del lugar, si hay", when: "", description: "Si sus sesiones grupales son en una escuela, es posible que también necesite una constancia de tuberculosis (TB) o formularios del distrito escolar. Le diremos qué necesita. Si no necesita nada, marque este paso como terminado.", linkText: "" }
+          es: { title: "Complete los requisitos del lugar, si hay", when: "", description: "Si sus sesiones grupales son en una escuela, es posible que también necesite una constancia de tuberculosis (TB) o formularios del distrito escolar. Le diremos qué necesita. Envíe cualquier comprobante por correo electrónico a programs@bbbs-sac.org. Si no necesita nada, marque este paso como terminado.", linkText: "" }
         },
         {
           id: "orientation", stage: "orientation",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Attend mentor orientation", when: "We’ll email you the date and details.", description: "Learn how Big Futures sessions work and how we keep students safe.", linkText: "" },
           es: { title: "Asista a la orientación para mentores", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda cómo funcionan las sesiones de Big Futures y cómo protegemos a los estudiantes.", linkText: "" }
         },
         {
           id: "schedule", stage: "launch-day",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Get your session schedule", when: "", description: "We’ll tell you where and when your monthly group sessions happen.", linkText: "" },
           es: { title: "Reciba su horario de sesiones", when: "", description: "Le diremos dónde y cuándo serán sus sesiones grupales mensuales.", linkText: "" }
         },
@@ -712,8 +724,8 @@ window.SITE_CONTENT = {
       ],
       faq: [
         {
-          en: { question: "What if I can’t make a session?", answer: "Tell us as soon as you know you’ll miss a session." },
-          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Avísenos en cuanto sepa que va a faltar a una sesión." }
+          en: { question: "What if I can’t make a session?", answer: "Text or email us as soon as you know you’ll miss a session." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Envíenos un mensaje de texto o un correo electrónico en cuanto sepa que va a faltar a una sesión." }
         }
       ]
     },
@@ -776,7 +788,7 @@ window.SITE_CONTENT = {
         },
         {
           id: "interview", stage: "interview",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Meet with BBBS staff", when: "", description: "We’ll email you to set up a short conversation so we can get to know you and answer your questions.", linkText: "" },
           es: { title: "Reúnase con el personal de BBBS", when: "", description: "Le enviaremos un correo electrónico para programar una conversación breve, para conocerle y responder sus preguntas.", linkText: "" }
         },
@@ -795,20 +807,20 @@ window.SITE_CONTENT = {
         },
         {
           id: "school-requirements", stage: "training",
-          link: "", linkEs: "", englishOnly: false,
-          en: { title: "Complete any school requirements", when: "", description: "Some schools need extra paperwork, like a TB clearance. We’ll tell you what your school needs. If it doesn’t need anything, check this step off.", linkText: "" },
+          link: "", linkEs: "", englishOnly: false, askUs: true,
+          en: { title: "Complete any school requirements", when: "", description: "Some schools need extra paperwork, like a TB clearance. We’ll tell you what your school needs. Email any proof of clearance to programs@bbbs-sac.org. If it doesn’t need anything, check this step off.", linkText: "" },
           // SPANISH REVIEW: legal (health and school requirements)
-          es: { title: "Complete los requisitos de la escuela, si hay", when: "", description: "Algunas escuelas piden formularios adicionales, como una constancia de tuberculosis (TB). Le diremos qué necesita su escuela. Si no necesita nada, marque este paso como terminado.", linkText: "" }
+          es: { title: "Complete los requisitos de la escuela, si hay", when: "", description: "Algunas escuelas piden formularios adicionales, como una constancia de tuberculosis (TB). Le diremos qué necesita su escuela. Envíe cualquier comprobante por correo electrónico a programs@bbbs-sac.org. Si no necesita nada, marque este paso como terminado.", linkText: "" }
         },
         {
           id: "orientation", stage: "orientation",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Attend orientation", when: "We’ll email you the date and details.", description: "Learn what to expect as a Big and how sessions with your Little work.", linkText: "" },
           es: { title: "Asista a la orientación", when: "Le enviaremos la fecha y los detalles por correo electrónico.", description: "Aprenda qué esperar como Big y cómo funcionan las sesiones con su Little.", linkText: "" }
         },
         {
           id: "schedule", stage: "launch-day",
-          link: "", linkEs: "", englishOnly: false,
+          link: "", linkEs: "", englishOnly: false, askUs: true,
           en: { title: "Get your school and schedule", when: "", description: "We’ll tell you which elementary school you’ll visit and your weekly after-school time.", linkText: "" },
           es: { title: "Reciba su escuela y su horario", when: "", description: "Le diremos a qué escuela primaria irá y su horario semanal después de clases.", linkText: "" }
         },
@@ -825,8 +837,8 @@ window.SITE_CONTENT = {
           es: { question: "¿Puedo ganar horas de servicio comunitario?", answer: "Depende de su escuela. Pregúntenos a nosotros y a su consejero/a escolar qué cuenta." }
         },
         {
-          en: { question: "What if I can’t make a session?", answer: "Tell us as soon as you know you’ll be absent, so we can plan for your Little." },
-          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Avísenos en cuanto sepa que va a faltar, para que podamos organizarnos con su Little." }
+          en: { question: "What if I can’t make a session?", answer: "Text or email us as soon as you know you’ll be absent, so we can plan for your Little." },
+          es: { question: "¿Qué pasa si no puedo ir a una sesión?", answer: "Envíenos un mensaje de texto o un correo electrónico en cuanto sepa que va a faltar, para que podamos organizarnos con su Little." }
         }
       ]
     }

@@ -187,6 +187,7 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 0.95;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -404,7 +405,7 @@ main:focus,
 
 .section-heading {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 10.5vw, 2.5rem);
 }
 
 .section-intro {
@@ -417,6 +418,7 @@ main:focus,
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  max-width: 100%;
   min-height: 44px;
   padding: 0.625rem 1.125rem;
   background: var(--brand);
@@ -618,7 +620,7 @@ main:focus,
 
 .quiz-result-name {
   margin: 0.25rem 0 0.5rem;
-  font-size: 3rem;
+  font-size: clamp(2.25rem, 12vw, 3rem);
 }
 
 .quiz-result-tagline,
@@ -691,7 +693,7 @@ main:focus,
 
 .program-card-name {
   margin: 0 0 0.5rem;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 10.5vw, 2.5rem);
 }
 
 .program-card-body {
@@ -771,7 +773,7 @@ main:focus,
 
 .checklist-heading {
   margin-top: 2.5rem;
-  font-size: 2.75rem;
+  font-size: clamp(2rem, 11vw, 2.75rem);
 }
 
 .draft-notice {
@@ -1092,6 +1094,28 @@ main:focus,
   margin: 0.875rem 0 0;
 }
 
+.step-ask {
+  margin: 0.875rem 0 0;
+  padding: 0.625rem 0.75rem;
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+  font-size: 0.9375rem;
+}
+
+.step-ask a {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.step-ask .keep-together {
+  white-space: nowrap;
+}
+
+.step-details a {
+  overflow-wrap: anywhere;
+}
+
 /* ---------- Common questions ---------- */
 
 .faq {
@@ -1140,7 +1164,7 @@ main:focus,
 
 .contact h2 {
   margin: 0;
-  font-size: 2.75rem;
+  font-size: clamp(2rem, 10.5vw, 2.75rem);
 }
 
 .contact p {

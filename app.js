@@ -125,6 +125,75 @@
     return document.getElementById(id);
   }
 
+  // Adds text to an element, turning any email address into a mail link.
+  var EMAIL_PATTERN = /([A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,})/;
+
+  function appendLinkedText(element, text) {
+    String(text || "").split(EMAIL_PATTERN).forEach(function (part, index) {
+      if (!part) return;
+      if (index % 2 === 1) {
+        var mail = make("a", null, part);
+        mail.href = "mailto:" + part;
+        element.appendChild(mail);
+      } else {
+        element.appendChild(document.createTextNode(part));
+      }
+    });
+    return element;
+  }
+
+  function linkedParagraph(className, text) {
+    return appendLinkedText(make("p", className), text);
+  }
+
+  // Phone number in the form phone and text links need, e.g. +19163142980.
+  function phoneTarget(phone) {
+    var digits = String(phone || "").replace(/\D/g, "");
+    if (digits.length === 10) return "+1" + digits;
+    return (String(phone).trim().charAt(0) === "+" ? "+" : "") + digits;
+  }
+
+  // "Not sure, or haven't heard from us yet? Text ..., call, or email ..."
+  function buildAskUs() {
+    var contact = content.contact || {};
+    var parts = {};
+    if (contact.phone) {
+      var target = phoneTarget(contact.phone);
+      // Keep just the phone number on one line, so long translations can still wrap.
+      var textLink = make("a");
+      ui("askUsText").split("{phone}").forEach(function (piece, index) {
+        if (index > 0) textLink.appendChild(make("span", "keep-together", contact.phone));
+        if (piece) textLink.appendChild(document.createTextNode(piece));
+      });
+      textLink.href = "sms:" + target;
+      var callLink = make("a", null, ui("askUsCall"));
+      callLink.href = "tel:" + target;
+      parts.text = textLink;
+      parts.call = callLink;
+    }
+    if (contact.email) {
+      var mailLink = make("a", null, ui("askUsEmail", { email: contact.email }));
+      mailLink.href = "mailto:" + contact.email;
+      parts.email = mailLink;
+    }
+    if (!parts.email && !parts.text) return null;
+
+    var box = make("p", "step-ask");
+    if (!parts.text) {
+      // No phone number: just offer email.
+      box.appendChild(document.createTextNode(ui("askUs").split("{")[0]));
+      box.appendChild(parts.email);
+      box.appendChild(document.createTextNode("."));
+      return box;
+    }
+    ui("askUs").split(/(\{\w+\})/).forEach(function (piece) {
+      var name = /^\{(\w+)\}$/.exec(piece);
+      if (name && parts[name[1]]) box.appendChild(parts[name[1]]);
+      else if (piece && !name) box.appendChild(document.createTextNode(piece));
+    });
+    return box;
+  }
+
   /* ---------- Icons ---------- */
 
   var SVG_NS = "http://www.w3.org/2000/svg";
@@ -239,12 +308,19 @@
     }
 
     if (contact.phone) {
-      var phoneItem = make("li");
-      phoneItem.appendChild(make("span", "contact-label", ui("phoneLabel")));
-      var phoneLink = make("a", null, contact.phone);
-      phoneLink.href = "tel:" + contact.phone.replace(/[^\d+]/g, "");
-      phoneItem.appendChild(phoneLink);
-      list.appendChild(phoneItem);
+      var target = phoneTarget(contact.phone);
+      var rows = [["phoneLabel", "tel:"]];
+      if (contact.textPreferred) rows.unshift(["textLabel", "sms:"]);
+      rows.forEach(function (row) {
+        var phoneItem = make("li");
+        phoneItem.appendChild(make("span", "contact-label", ui(row[0])));
+        var phoneLink = make("a", null, contact.phone);
+        phoneLink.href = row[1] + target;
+        phoneItem.appendChild(phoneLink);
+        // When texting is preferred, list text and call before email.
+        if (contact.textPreferred) list.insertBefore(phoneItem, emailItem || null);
+        else list.appendChild(phoneItem);
+      });
     }
 
     if (list.children.length) holder.appendChild(list);
@@ -716,14 +792,14 @@
     }
 
     var description = translated(step, "description");
-    if (description) details.appendChild(make("p", "step-description", description));
+    if (description) details.appendChild(linkedParagraph("step-description", description));
 
     // Optional list of short instructions under the description.
     var points = translated(step, "details");
     if (Array.isArray(points) && points.length) {
       var pointList = make("ul", "step-list");
       points.forEach(function (point) {
-        if (point) pointList.appendChild(make("li", null, point));
+        if (point) pointList.appendChild(appendLinkedText(make("li"), point));
       });
       details.appendChild(pointList);
     }
@@ -762,6 +838,12 @@
       body.appendChild(action);
     } else if (comingSoon) {
       body.appendChild(make("p", "step-soon", ui("comingSoon")));
+    }
+
+    // Steps that wait on us: tell people how to reach us.
+    if (step.askUs || comingSoon) {
+      var ask = buildAskUs();
+      if (ask) body.appendChild(ask);
     }
 
     item.appendChild(checkbox);
